@@ -1,0 +1,133 @@
+	<div class="page-header">
+		<h1>Özel alanlar</h1>
+		<p class="lead">Tüm tanıtım, işlem ve rapor formlarında bulunan özel alanlar ile ilgili ekstra bilgiler sayfasıdır.</p>
+	</div>
+
+	<h3>Cari ve Stok seçim alanları</h3>
+	<p>
+		<ul>
+			<li>
+				Cari seçim alanı : <img src="img/contact-selector.png"></img>
+				<p>
+					<span class="bordered">Cari Adı</span> alanını kullanarak işlem yapmak istediğiniz hesabı adından / kodundan bulabilirsiniz. 
+					Ayrıca, <span class="type-ahead">Cari Adı <b class="caret"></b></span> etiketi, aramalarınızı <b><u>Cari Adından</u></b> yapacağınız anlamına gelir. Eğer aramanızı değiştirip Cari Kodundan yapacaksanız <span class="type-ahead">Cari Adı <b class="caret"></b></span> etiketi üzerine bir kez kliklemeniz yeterli olacaktır.
+					Bulmak istediğiniz cari için input alanına birşeyler yazın. Aşağıya doğru açılacak listede yazdığınız bilgiye uygun carilerin bir kısmı gelecektir. Bu listeden aradığınız cariyi mouse ile seçebilir ya da üzerine gelip <kbd>enter</kbd> tuşuna basabilirsiniz. 
+					Bir cari hesabı seçtikten sonra input alanına çift kliklerseniz seçilmiş cari hesabın tanıtım formu yeni bir tab olarak açılacaktır. Cari seçmeden çift klik yaparsanız yeni bir cari tanıtımı yapabilirsiniz. En sağdaki inceleme butonunu klikleyerek de hesabın tüm detaylarını görebilirsiniz.
+				</p>
+			</li>
+			<li>
+				Stok seçim alanı : <img src="img/stock-selector.png"></img>
+				<p>
+					Tıpkı Cari hesap bulma işleminde olduğu gibi stok kartları aramalarınızı da adından, kodundan veya barkodundan yapabilirsiniz. <span class="type-ahead">Stok Adı <b class="caret"></b></span> etiketi, 
+					aramalarınızı <b><u>Stok Adından</u></b> yapacağınız anlamına gelir. Eğer aramanızı değiştirip Kodundan veya Barkodundan yapacaksanız <span class="type-ahead">Stok Adı <b class="caret"></b></span> etiketi üzerine bir kez kliklemeniz yeterli olacaktır.
+				</p>
+			</li>
+		</ul>
+	</p>
+
+	<h3>İşlem formları</h3>
+	<p>
+		<ul>
+			<li><span class="bordered">Fiş No</span> alanı her yeni bir dekontta sistem tarafından otomatik olarak bir arttırılır ve bu alan kullanıcı tarafından değiştirilemez.</li>
+			<li>
+				<span class="bordered">Belge No</span> her işlem kaydı için işlemin kaynağı olan matbu evrakın belge numarasını bu alana girebilirsiniz. Belge numaralarını Genel>Profil Tanımları::Genel tabından üç şekilde yönetebilirsiniz;
+				<ul>
+					<li>Manuel : Herhangi bir artış olmaz, manuel olarak istediğiniz değeri kullanabilirsiniz.</li>
+					<li>Yarı Otomatik : Belge No alanının yanına son belge numarasını bulup arttırabilmeniz için simgesi <span class="glyphicon glyphicon-play-circle"></span> olan bir buton çıkar.</li>
+					<li>Tam Otomatik : Her yeni bir işlem formu açıldığında bu alana son belge numarası bir arttırılarak getirilir.</li>
+				</ul>
+			</li>
+
+			<li><span class="bordered">İşlem Kaynağı</span> alanını kullanarak, rapor alırken işlemlerinizi guruplayabilirsiniz. Örneğin: Personellerinize verdiğiniz avansları <b>Personel Avansı</b> adı altında guruplamak için;
+				<ul>
+					<li>Öncelikle bu işlem kaynağını tanıtın</li>
+					<li>Yapacağınız işlemde (Borç Dekontu olabilir) kaynak olarak bunu seçin.</li>
+					<li>Artık rapor / listelerinizi İşlem Kaynağını seçerek sadece belli türdeki işlemlere göre alabilirsiniz.</li>
+					<li>İşlem Kaynakları her modül için ayrı ayrı tanımlanır.</li>
+				</ul>
+			</li>
+
+			<li><span class="bordered">İşlem Noktası</span> ve <span class="bordered">Özel Kod</span> alanları da rapor alırken size ekstra filtreleme olanağı sağlar. Bu iki alan tüm modüllerde ortaktır, tek bir noktadan tanıtıp tüm modüllerden kullanabilirsiniz.
+				<b>İşlem Noktası</b>' nı kullanarak Şubelerinizi ya da ayrı ele almak istediğiniz işlem birimlerinizi takip edebilirsiniz.
+			</li> 
+		</ul>
+	</p>
+
+	<h4>Para Birimi</h4>
+	<p>
+		İşlemin Para Birimini bu alandan belirleyebilirsiniz. Hazır olarak aktif Profil tanımındaki para birimi gelir ve değeri 1 kabul edilir. Üç kısımdan oluşur;
+		<ul>
+			<li>Döviz Türü : Para birimlerini listeler</li>
+			<li>Değeri : Default para biriminin kur değeri</li>
+			<li>Karşılığı : Default para birimine göre karşılığı</li>
+		</ul>
+		<p>
+			<img src="img/currency-selector.png" class="bordered"></img> alt kısmındaki kırmızı ibare, döviz kurlarının hangi tarihte ve hangi kaynaktan çekildiğini gösterir. 
+		</p>
+
+		<div class="bs-example">
+			Default para birimi <span class="bordered">TL</span>, seçilen para birimi <span class="bordered">TL</span> ve işlem bedelinin 100 TL olduğu durumda, yukarıdaki değerler;
+			<ul>
+				<li>Döviz Türü : TL</li>
+				<li>Değeri : 1</li>
+				<li>Karşılığı : 100</li>
+			</ul>
+			olacaktır.
+		</div>
+
+		<div class="bs-example">
+			Default para birimi <span class="bordered">TL</span>, seçilen para birimi <span class="bordered">USD</span> ve işlem bedelinin 100 USD olduğu durumda, yukarıdaki değerler;
+			<ul>
+				<li>Döviz Türü : USD</li>
+				<li>Değeri : 2.2545</li>
+				<li>Karşılığı : 225.45</li>
+			</ul>
+			olacaktır.
+		</div>
+	</p>
+
+	<h4>Yansı Hesap</h4>
+	<p>
+		Bir işlem yaparaken cari, kasa ya da banka hesaplarından birisine borç veya alacak kaydı işlediğinizde aynı anda başka bir hesaba da tersine işlem kaydı oluşturmak isterseniz bu kısmı kullanabilirsiniz.
+		Başka bir deyiş ile; bir cari hesabı borçlandırırken başka bir hesabı aynı tutarda alacaklandırabilirsiniz (virman bunun için en iyi örnektir). Dört kısımdan oluşur;
+		<ul>
+			<li>Yansı Hesap : Yansımanın yapılacağı hesap seçilir, 4 seçeneği vardır:
+				<ul>
+					<li>Yok : Herhangi bir yansıma olmayacağı anlamına gelir.</li>
+					<li>Cari : Yansımanın bir Cari Hesaba olacağı anlamına gelir.</li>
+					<li>Kasa : Yansımanın bir Kasa Hesabına olacağı anlamına gelir.</li>
+					<li>Banka : Yansımanın bir Banka Hesabına olacağı anlamına gelir.</li>
+				</ul>
+			 </li>
+			<li>Yukarıdaki Yanı Hesap seçeneğine bağlı olarak, Cari, Kasa ya da Banka seçim alanı gelir.</li>
+			<li>İşlem Kaynağı : Yansı hareket kaydının İşlem Kaynağı belirtilebilir.</li>
+			<li>Para Birimi : Bu alan kullanılarak, farklı para birimleri ile yansıma yapılabilir.</li>
+			<b><u>Not : </u></b> Virman işlemlerinde asıl işlem hesabı ile yansıyan hesap aynı olamaz!
+		</ul>
+
+		<div class="bs-example">
+			XYZ hesabından ABC hesabına 100 TL Borç virmanı, Borç Dekontu kısmından şu şekilde olacaktır;
+			<ul>
+				<li>Yansı Hesap : Cari</li>
+				<li>Cari Adı : ABC Ltd.Şti.</li>
+				<li>İşlem Kaynağı : Virman</li>
+				<li>ParaB. : TL</li>
+			</ul>
+			Bu işlem kaydedildiğinde; XYZ hesabı 100 TL borçlanırken ABC hesabı 100 TL alacaklanacaktır.
+		</div>
+	</p>
+
+	<h3>Genel</h3>
+
+	<h4>Basit Seçim Alanları</h4>
+	<p>
+		Tanım ya da İşem formlarında bulunan ve ilgili kayıt için ekstra bilgi girebilmemizi sağlayan alanlardır. Daha sonra rapor, liste ve analizlerde bu alanlar kullanılarak filtrelemeler yapılabilir.
+		<div class="bs-example">
+			Cari Hesap Tanımı formundaki <img src="img/field-region.png"></img> alanı ile cari hesabın bölgesini belirleyebilirsiniz. Bulunduğunuz formu değiştirmeden yeni bir bölge eklemek isterseniz, sağdaki ... simgesi olan butonu klikleyebilirsiniz.
+		</div>
+	</p>
+
+	<h3>Not Alanları</h3>
+	<p>
+		Cari ve Stok kartlarında bulunan <span class="bordered">Notlar</span> tabı ile istediğiniz açıklama satırlarını girebilirsiniz. Bu alan <a href="http://tr.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> özelliğindedir. 
+	</p>

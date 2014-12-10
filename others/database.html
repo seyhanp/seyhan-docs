@@ -1,0 +1,99 @@
+	<div class="page-header">
+		<h1>Veritabanı ayarları</h1>
+		<p class="lead">seyhan, veritabanı bağımsızdır. H2, mysql, postgresql ya da ms-sqlserver veritabanlarından herhangi birini kullanabilirsiniz.</p>
+	</div>
+
+	<h3>Başlarken</h3>
+	<p>
+		Veritabanı ayarları <code>./conf/application.config</code> dosyasında bulunmaktadır. Bu dosya <code>key-value</code> çiftlerinden oluşan bir property dosyasıdır.
+	</p>
+	<p>
+		<small><u><em>Uyarı</em></u> : Property dosyalarında, başlarında <kbd>#</kbd> bulunan satırlar dikkate alınmazlar.
+		Bu yüzden, kullanmak istediğiniz veritabanı ayar satırlarının başında bulunan # karakterini kaldırmalı ve kullanmayacağınız diğer veritabanlarını da yine # karakteri ile kapatmalısınız.</small>
+	</p>
+
+	<p>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Lütfen dikkat!</h4>
+			<p>
+				Kullanacağınız veritabanını <small>(aşağıdaki bilgilere göre)</small> oluşturduktan sonra, <strong>seyhan</strong>'ı başlattığınızda, uygulama kendisi için gereken tüm tabloları otomatik olarak oluşturacaktır. 
+			</p>
+		</div>
+	</p>
+
+	<h3>H2 ayarları</h3>
+	<p>
+		İlk kurulumda hazır gelen ve dosya temelli bir veritabanıdır. Demo ve test işlemlerinin dışında kullanımı önerilmez. Herhangi bir kurulum ve ön hazırlık gerektirmez. Veritabanı yolu olarak uygulama dizini altıda h2db klasörünü kullanır.
+	</p>
+
+	<h3>MySql ayarları</h3>
+	<p>
+		Veritabanını ilk defa oluşturacaksanız öncelikle veritabanı yöneticinizi açıp;
+		<ul>
+			<li>Arayüze sahip bir yönetici kullanıyorsanız doğrudan bu kısmı kullanın!</li>
+			<li>
+				Konsol tabanlı bir yönetici kullanıyorsanız;
+				<div class="highlight">
+					<pre><code class="language-sql" data-lang="sql">create database seyhan character set utf8 collate utf8_general_ci;</code></pre>
+				</div>
+			</li>
+		</ul>
+		komutunu çalıştırmalısınız! Daha sonra <code>application.conf</code> dosyası içerisindeki "MySQL Database settings" kısmını düzenlemelisiniz!
+	</p>
+
+	<h3>PostgreSql ayarları</h3>
+	<p>
+		Veritabanını ilk defa oluşturacaksanız öncelikle veritabanı yöneticinizi açıp;
+		<ul>
+			<li>Arayüze sahip bir yönetici kullanıyorsanız doğrudan bu kısmı kullanın!</li>
+			<li>
+				Konsol tabanlı bir yönetici kullanıyorsanız;
+				<div class="highlight">
+					<pre><code class="language-sql" data-lang="sql">create database seyhan;</code></pre>
+				</div>
+			</li>
+		</ul>
+		komutunu çalıştırmalısınız! Daha sonra <code>application.conf</code> dosyası içerisindeki "Postgresql Database settings" kısmını düzenlemelisiniz!
+	</p>
+
+	<h3>MS-SqlServer ayarları</h3>
+	<p>
+		Veritabanını ilk defa oluşturacaksanız öncelikle veritabanı yöneticinizi açıp yeni bir veritabanı eklemelisiniz!
+		Daha sonra <code>application.conf</code> dosyası içerisindeki "MS-SqlServer Database settings" kısmını düzenlemelisiniz!
+	</p>
+	
+	<p>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Örnek mysql ayarları <small>(application.config dosyası görünümü)</small></h4>
+			<p>
+				Sadece mysql bloğundaki satırlarda <kbd>#</kbd> olmadığına dikkat edin! Ayrıca bağlantı dizesi, kullanıcı adı ve parolasını kendi belirlediğiniz değerler ile değiştirmeyi de unutmayın!
+			</p>
+		</div>
+		<div class="highlight">
+			<pre><code class="language-property" data-lang="property">...
+...
+# H2 Database settings
+# ~~~~~ 
+#db.default.driver=org.h2.Driver
+#db.default.url="jdbc:h2:file:./h2db/seyhan"
+#db.default.user=sa
+#db.default.password=""
+
+# MySQL Database settings
+# ~~~~~ 
+db.default.driver=com.mysql.jdbc.Driver
+db.default.url="jdbc:mysql://localhost/seyhan?characterEncoding=UTF-8&storage_engine=InnoDB"
+db.default.user=root
+db.default.password="1234"
+
+# Postgresql Database settings
+# ~~~~~ 
+#db.default.driver=org.postgresql.Driver
+#db.default.url="jdbc:postgresql://localhost/seyhan"
+#db.default.user=postgres
+#db.default.password="1234"
+...
+...
+</code></pre>
+		</div>
+	</p>

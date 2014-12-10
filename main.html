@@ -1,0 +1,154 @@
+	<div class="page-header">
+		<h1>seyhan projesi' ne hoşgeldiniz</h1>
+		<p class="lead">seyhan, küçük ve orta ölçekli firmalara yönelik bir ön muhasebe projesidir.</p>
+	</div>
+
+	<h3>Genel özellikleri</h3>
+	<ul>
+		<li>
+			İşletim sistemi bağımsızdır
+			<p>Java JDK 1.6+ platformunun çalışabildiği tüm sistemlerde çalışır; linux, unix, mac, windows...</p>
+		</li>
+		<li>
+			Veritabanı bağımsızdır
+			<p>Popüler ilişkisel veritabanları ile çalışır; mysql, postgresql, ms-sqlserver, h2...</p>
+		</li>
+		<li>
+			Tarayıcı bağımsızdır
+			<p>Tüm tarayıcılarla çalışır; internet explorer, firefox, chrome...</p>
+		</li>
+		<li>
+			Çok kullanıcılıdır
+			<p>Herhangi bir sınırlama olmadan, istediğiniz kadar kullanıcı tanımlayabilir ve izinlerini düzenleyebilirsiniz.</p>
+		</li>
+		<li>
+			Çoklu dil desteğine sahiptir
+			<p>Arayüz ve raporlarınızda farklı dil seçneğini kullanabilirsiniz. Şuan için desteklenen diller Türkçe ve İngilizce'dir.</p>
+		</li>
+		<li>
+			Farkı hedeflere çıktı desteğine sahiptir
+			<p>Rapor ve belgelerinizi pdf, excel ve metin dosyası olarak kaydedebilir ya da nokta vuruşlu, lazer... yazıcılardan çıktı alabilirsiniz.</p>
+		</li>
+		<li>
+			Açık kaynak kodludur
+			<p>Ücretsiz olarak kullanabilirsiniz aynı zamanda projenin kaynak kodlarına da erişebilirsiniz.</p>
+		</li>
+	</ul>
+
+	<h3>Sahip olduğu modüller</h3>
+	<div class="row">
+  		<div class="width120">
+			<ul class="list-unstyled">
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/cari">Cari</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/kasa">Kasa</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/banka">Banka</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/cek_senet">Çek ve Senet</a></li>
+			</ul>
+		</div>
+  		<div class="width120">
+			<ul class="list-unstyled">
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/stok">Stok</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/siparis">Sipariş</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/irsaliye">İrsaliye</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/fatura">Fatura</a></li>
+			</ul>
+		</div>
+  		<div class="width120">
+			<ul class="list-unstyled">
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/satis">Satış</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/genel">Genel</a></li>
+				<li><a type="button" class="btn btn-default btn-xs vmenu" href="#/admin">Admin</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<h3>Dökümantasyon projesinin kapsamı</h3>
+	<p>
+		Dökümantasyon projesi kullanıcıların temel düzeyde ön muhasebe bildikleri varsayımıyla hazırlandığı için muhasebe kavramlarını içermez. Genel olarak; kendine has özellikleri, kısıtları ve farklılıkları anlatarak seyhan projesinin tanıtımını yapar.
+	</p>
+
+	<h2>Kurulum işlemleri</h2>
+
+	<h3>Kurulumdan önce yapılması gerekenler</h3>
+	<ol>
+		<li>Sisteminizde Java 6 SDK kurulu olması gerekiyor. Daha önceden kurmadıysanız <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR">şu adresten</a> indirebilirsiniz.</li>
+		<li>seyhan ilk olarak H2 veritabanı ile çalışacak şekilde ayarlanmıştır ve H2 db, daha çok demo ve test işlemlerinde kullanım için uygundur.  Farklı bir veritabanı kullanmak istiyorsanız ve sisteminizde de yüklü değilse bu aşamada kurmanız gerekiyor.</li>
+		<li>Dağıtımlar zip halinde olduğu için sisteminizde Zip Açıcı (winzip, unzip...) olmalı. Sisteminizde yoksa, kullandığınız işletim sistemine uygun olan bir açıcı indirip kullanabilirsiniz.</li>
+	</ol>
+
+	<h3>Kurulum aşaması</h3>
+	<div class="bs-callout bs-callout-info">
+		seyhan projesini kurmak için Java JDK 6+ dan başka herhangi bir kurulum yapmanız gerekmez. Proje size bir zip dosyası halinde gelir ve bu zip dosyasını herhangi bir dizine açıp hemen kullanmaya başlayabilirisiniz!
+	</div>
+	<ol>
+		<li>Programı şu <a href="ftp://seyhanproject.com">ftp adresinden</a> indirin.</li>
+		<li>
+			seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonraki anlatımlarda referans olması için bu dizine APP_DIR diyeceğiz.
+			<p>
+				<div class="highlight">
+					<pre><code class="language-bash" data-lang="bash">APP_DIR (1)
+├── conf/ (2)
+│   └── evolutions/ (3)
+│       ├── application.conf
+│       ├── messages.tr
+│       ├── messages.en
+│       └── logger.xml
+├── lib/ (4)
+├── logs/ (5)
+├── reports/ (6)
+└── share/ (7)</code></pre>
+				</div>
+			</p>
+			<small>
+				<p>(1) seyhan Project'in ana dizinidir. Projeyi başlatmak için içerisinde iki adet script dosyası bulunur. Windows işletim sistemleri için <code>seyhan.bat</code> ve Mac ve Linux sistemleri için <code>seyhan</code> ana script dosyalarıdır. Linux ve Mac kullanıcılarının öncelikle <strong>seyhan</strong> script dosyasını executable hale getirmeleri gerekiyor.</p>
+				<p>
+					<div class="highlight">
+						<pre><code class="language-bash" data-lang="bash">$ chmod +x seyhan</code></pre>
+					</div>
+				</p>
+				
+				<p>(2) Tüm konfigurasyon dosyalarının bulunduğu dizindir. İçerisinde bulunan dosyalar ve temel görevleri:
+					<ul>
+						<li><code>application.conf:</code> projenin temel ayarlar dosyasıdır.</li>
+						<li><code>messages.tr:</code> Türkçe metinlerin bulunduğu dosyadır.</li>
+						<li><code>messages.en:</code> İngilizce metinlerin bulunduğu dosyadır.</li>
+						<li><code>logger.xml:</code> log çıktısı formatlarının ve çıkış yerlerinin ayarlandığı dosyadır.</li>
+					</ul>
+				</p>
+				
+				<p>(3) Proje kullanılacağı ilk sefer için veritabanı şema kurulumu <strong>seyhan</strong> tarafından otomatik olarak yapılır. Bu dizinde her bir veritabanı için ana şemayı oluşturan toplu sql scriptleri yer alır. <strong>seyhan</strong> şema kurulumlarını ve güncellemelerin otomatik olarak yapar. İsterseniz bunu kendiniz de yapabilirsiniz.</p>
+				<p>(4) Projenin temel jar dosyası ile kullandığı tüm kütüphaneler bu dizinde yer alır.</p>
+				<p>(5) log dosyaları bu dizinde yer alır.</p>
+				<p>(6) Projedeki tüm raporlar bu dizinde açık olarak yer alır.</p>
+				<p>(7) Projenin kod dökümanları bu dizinde yer alır (geliştiricilere yönelik içeriğe sahip dökümanlardır)</p>
+			</small>
+		</li>
+	</ol>
+
+	<div class="bs-callout bs-callout-danger">
+		<h4>Çalışmak istediğiniz veritabanı için;</h4>
+		<p>
+			<strong>seyhan</strong> demo ve test işlemleri için ilk kullanımda H2 veritabanı ile gelir. Testlerinizi bitirdikten sonra mysql, postgresql ya da ms-sqlserver veritabanlarından birini kullanmanız önerilir.
+			Daha detaylı bilgili için <a type="button" href="#/database" class="btn btn-default btn-xs active">Veritabanı İşlemleri</a> kısmına bakabilirsiniz.
+		</p>
+	</div>
+
+	<h3>Kurulum sonrası</h3>
+	<p>
+		<strong>seyhan</strong> temel olarak sunucu sistemlerde çalışacak şekilde tasarlanmıştır. Elbette bu durum kişisel bilgisayarlarda çalışmasına engel değildir. Bildiğiniz gibi sunucu sistemlerde grafik tabanlı masaüstü yoktur ve süreçler konsol tabanlı işletilirler.
+		Bu yüzden <strong>seyhan</strong> konsol tabanlı olarak başlatılır ve durdurulur.
+	</p>
+	<p>
+		Başlatmak için linux ve mac sistemlerinde konsoldan <code>$APP_DIR/seyhan</code>, windows sisteminde komut satırından <code>%APP_DIR%\seyhan.bat</code> script dosyasını çalıştırmalısınız. Daha sonra bilgisayarınızın tarayıcısından <a href="http://localhost:9000">http://localhost:9000</a> yazıp <kbd>enter</kbd> basmalısınız.
+		Eğer uygulamayı sunucuya kurup deneyecekseniz, <code>localhost</code> yerine sunucunun IP adresini yazmalısınız!
+	</p>
+	<p>
+		Durdurmak için başlattığınız konsoldan <kbd>ctrl + c</kbd> tuş kombinaysonuna basmalısınız.
+	</p>
+
+	<h3>Login formu ve giriş</h3>
+	<p>
+		Programı sadece giriş yapmış kullanıcılar kullanabilir. Henüz giriş yapmamış kullanıcılar ilk etapta Login Formu'na yönlendirilirler.
+	</p>
+
+	<div ng-include src="'includes/instant-users.html'"></div>

@@ -1,0 +1,63 @@
+	<div class="page-header">
+		<h1>Satış Modülü</h1>
+		<p class="lead">Stok satış hareketlerine ve satıcı bilgisine dayalı satışların takip edildiği modüldür.</p>
+	</div>
+
+	<h4>Satıcı Tanımları</h4>
+	<p>
+		Çalışanlarınıza yaptıkları satışlar üzerinden pirim vermek istediğinizde onları bir satıcı olarak bu kısımda tanıtırsınız. Satıcınıza ait genel pirim oranını satıcı tanıtımında verebilirsiniz. Bunun yanında, her stoğa ait farklı oranlarda pirim sistemi uyguluyorsanız bunun için stok kartlarındaki <span class="bordered">Pirim Orn.</span> alanını kullanabilirsiniz.
+	</p>
+
+	<h4>Kampanya Tanımları</h4>
+	<p>
+		Mal satışı yaparken belli tarihler arasında ve sadece belli ürünlerinize yönelik kampanyalı satış yapmak isterseniz bu kısmı kullanırsınız. Burada önemli olan bilgiler;
+		<ul>
+			<li><span class="bordered">Aktif?</span> : Bu değer EVET olursa,</li>
+			<li><span class="bordered">Tarih Aralığı</span> : Başlama ve Bitiş ikilisinden oluşur, bugünün tarihi bu iki tarih arasında ise,</li>
+			<li><span class="bordered">Kategori, Gurup,...</span> gibi alanlar verilirse eğer, bu alanları uyan mal satışlarınızda bu kampanyanın indirimleri uygulanır.</li>
+		</ul>
+		<div class="bs-callout bs-callout-info">
+			<h4>Kampanyalara Öncelik Verme</h4>
+			Tarih aralığı kesişen birden fazla kampanya olduğu durumlarda, içlerinden bir kampanyanın daha öncelikli değerlendirilmesini isterseniz, bu kampanyanın <span class="bordered">Önceliği</span> değerini yüksek vermeniz gerekir.
+			<div class="bs-example">
+				İki farklı kampanyamız var diyelim ve tanımlarken alanlara verdiğimiz değerlerin de,
+				<ul>
+					<li>Kampanya 1 için:
+						<ul>
+							<li>Tarih Aralığı : 01/01/2014 - 31-12-2014</li>
+							<li>Önceliği : 0</li>
+							<li>İsk.1 : 10</li>
+						</ul>
+					 </li>
+					<li>Kampanya 2 için:
+						<ul>
+							<li>Tarih Aralığı : 01/01/2014 - 31-12-2014</li>
+							<li>Önceliği : 5</li>
+							<li>İsk.1 : 5</li>
+						</ul>
+					 </li>
+				</ul>
+
+			</div>
+			olduğunu varsayarsak, satış işlemi yaparken herhangi bir stoğu seçtiğimizde, öncelik değeri 5 olan Kampanya 2' ye ait iskonto oranları uygulanacaktır.
+		</div>
+	</p>
+
+	<h4>Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>Satış Raporu : Verilen tarihler arasında satıcının stoklara göre yaptığı satış, iade miktarları ve tutarları ile alacağı pirimi listeler.
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Cari</li>
+		 			<li>Depo</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>İşlem Kaynağı</li>
+		 			<li>Gurup</li>
+		 			<li>Bölge</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz.
+		 	</li>
+		 </ul>
+	</p>

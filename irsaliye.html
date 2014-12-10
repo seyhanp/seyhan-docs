@@ -1,0 +1,90 @@
+	<div class="page-header">
+		<h1>İrsaliye Modülü</h1>
+		<p class="lead">Sevk edilen mallara ait irsaliyelerin takip edildiği modüldür.</p>
+	</div>
+
+	<h4>İrsaliye Fişleri</h4>
+	<p>
+		İrsaliye fişleri iki kısımdan oluşmaktadır.
+		<ul>
+			<li>Müşterilerinize mal sevkiyatı yapacağınız zaman Satış İrsaliyesi kısmını,</li> 
+			<li>Satıcılarınızdan mal alımı yapacağınız zaman da Alış İrsaliyesi kısmını kullanırsınız.</li> 
+		</ul>
+		<p>
+			İrsaliyelerdeki tablolu giriş hakkında detaylı bilgi için <a type="button" href="#/others/stock-tabs" class="btn btn-default btn-xs active">Stok Tabları</a> kısmına bakabilir ve irsaliyeleri yazdırma hakkında detaylı bilgi için de <a type="button" href="#/printing/printing" class="btn btn-default btn-xs active">Belge Basımları</a> kısmına bakabilirsiniz. Ayrıca irsaliyelerde bulunan fiyat kolonlarının olup/olmamasını istiyorsanız bunu da, Genel>Profil Tanımları::İrsaliye tabı <span class="bordered">Fiyatlı Çalışma</span> kısmından belirleyebilirsiniz.
+		</p>
+	</p>
+
+	<h4>İrsaliye Kaynakları</h4>
+	<p>
+		İrsaliye hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. İrsaliye Kaynakları'nın hangi tür irsaliyelerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
+	</p>
+
+	<h4>İrsaliye Onaylama Adımları</h4>
+	<p>
+		Her girilen irsaliye <span class="bordered">Beklemede</span> statüsünde kaydedilir. Girdiğiniz alış-satış irsaliyelerini Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
+	</p>
+
+	<p>
+		<div>
+			<strong>1. Arama-Bulma adımı</strong>
+		</div>
+		Onaylamak istediğiniz irsaliyeleri öncelikle bu kısımdan (cari hesabına, teslim tarihine, statüsüne, fiş tipine... göre) bulmalısınız.
+
+		<div class="vspace-15">
+			<strong>2. Onaylama adımı</strong>
+		</div>
+		1. adımda bulduğunuz irsaliyeler aşağıda, Arama Sonuçları kısmında listelenir. Onaylamak istediğiniz irsaliyelerin en solunda bulunan checkbox kutucuğunu aktif hale getirip, üst kısımda bulunan fatura onaylama butonunu seçersiniz.
+		<div>
+			Onaylama Butonu
+			<ul>
+				<li><u>Fatura Oluşur</u> : Seçtiğiniz irsaliyeye ait faturaları oluşturur.</li>
+			</ul>
+		</div>
+	</p>
+	<p>
+		<div class="bs-callout bs-callout-info">
+			Onaylanan irsaliyeler tekar düzenlenemez ve silinemez! Bunu yapabilmek için öncelikle onay faturasını silmeniz gerekir.
+		</div>
+	</p>
+	<p>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Oluşum Tipi</h4>
+			<p>
+				Birden fazla irsaliye onayladığınız durumlarda, irsaliyelerinizin tek tek ya da cari hesap bazında guruplanarak birleştirilmesini istiyorsanız bunu, Genel>Profil Tanımları::İrsaliye tabı <span class="bordered">Oluşum Tipi</span> kısmından belirleyebilirsiniz.
+			</p>
+			<div class="bs-example">
+				Bir cari hesaba ait 3 adet irsaliyeyi tek seferde onaylayacaksanız ve <span class="bordered">Oluşum Tipi</span>
+				<ul>
+					<li><u>Fişler Cari Hesap bazında guruplansın</u> seçilmişse, onaylama işlemi sonucunda 3 irsaliye tek bir fatura şeklinde guruplanarak onaylanır.</li>
+					<li><u>Her bir Fiş olduğu gibi onaylansın</u> seçilmişse, onaylama işlemi sonucunda 3 irsaliye için toplam 3 fatura oluşturulur.</li>
+				</ul>
+			</div>
+		</div>
+	</p>
+
+	<h4 class="vspace-25">Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>İrsaliye Listesi : İrsaliye listesini verir. Özet ve Detay şeklinde alınabilir.</li>
+		 	<li>Dağılım Raporu : Stokların belirli tarihler arasındaki dağılımlarını verir. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Cari</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>Gün</li>
+		 			<li>Teslim Tarihi</li>
+		 			<li>Özel Kod</li>
+		 			<li>İşlem Noktası</li>
+		 			<li>Fiş Tipi</li>
+		 			<li>İşlem Kaynağı</li>
+		 			<li>Kategori</li>
+		 			<li>Depo</li>
+		 			<li>Gurup</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz. Ayrıca döküm şekli olarak <span class="bordered">Detay</span> ve <span class="bordered">Özet</span> seçeneklerini de kullanabilirsiniz.
+		 	</li>
+		 </ul>
+	</p>

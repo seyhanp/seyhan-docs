@@ -1,0 +1,133 @@
+	<div class="page-header">
+		<h1>Belge Basımları</h1>
+		<p class="lead">Hareket formlarında girdiğiniz fiş, dekont ve bordro belgelerinin dökümlerini nasıl alacağınız bu kısımda anlatılır.</p>
+	</div>
+
+	<h3>Belge Hedefleri</h3>
+	<p>
+		seyhan gibi tarayıcılarda açılan web projeleri işletim sisteminizin kaynaklarını kullanamazlar. Sisteminize bağlı lokal yazıcınız ya da ağınızı üzerinde bulunan uzak bir noktadaki yazıcınız da buna dahildir. Tasarladığınız belgelerinizi yazdırabilmeniz ya da ağınızda herhangi bir noktaya dosya olarak kaydedebilmeniz için seyhan kuyruk yapılarını kullanır. Belge hedefleri temel olarak iki kısma ayrılır; dosya, yazıcı.
+		<p>
+			Bu kısımda tanımlayacağınız Belge Hedefleri ile belge basımlarınızı farklı noktalara gönderebilirsiniz. Hedefiniz aynı bilgisayar üzerindeki bir yazıcı veya dosya/ağ sisteminiz üzerinde bir dosya ya da uzakta bulunan bir sunucuya bağlı bir yazıcı ya da dosya yolu olabilir. Hedefleriniz tanımlarken şu özelliklerini düzenleyebilirsiniz;
+		</p>
+		<ul>
+			<li>
+				<span class="bordered">Konum</span> Bu alan <strong>Yerel</strong> ya da <strong>Uzak</strong> değerlerinde birisi olabilir.
+				<ul>
+					<li>Yerel : Kendi bilgisayarınıza bağlı bir yazıcı / dosya yolu ya da dahil olduğunuz bir ağda bulunan yazıcı / dosya yolunu kullanacağınız zaman seçersiniz.</li>
+					<li>Uzak : Ağınızdan bağımsız, uzak bir noktadaki bir sunucu üzerinde bulunan bir yazıcı / dosya yolunu kullanacağınız zaman seçersiniz.</li>
+				</ul>
+			</li>
+			<li>
+				<span class="bordered">Hedef</span> Bu alan <strong>Dosyaya, Dot Matrix Yazıcıya</strong> ya da <strong>Lazer/InkJet yazıcıya</strong> değerlerinde birisi olabilir.
+				<ul>
+					<li>Dosyaya : Belge basımınızı dosya olarak saklamak istediğinizde bu seçeneği,</li>
+					<li>Dot Matrix Yazıcıya : Belge basımınızı metin tabanlı / nokta vuruşlu bir yazıcıdan çıkarmak istediğinizde bu seçeneği,</li>
+					<li>Lazer/InkJet yazıcıya : Belge basımınızı lazer/inkjet/termal... gibi bir yazıcıdan çıkarmak istediğinizde de bu seçeneği kullanırsınız.</li>
+				</ul>
+			</li>
+			<li>
+				<span class="bordered">Yol</span> Burası serbest metin girişi yapabildiğiniz bir alandır. Hedefiniz; 
+				<ul>
+					<li>Dosyaya olduğunda, dosya yolu ve adı olarak,</li>
+					<li>Dot Matrix yazıcıya olduğunda, yazıcı yolu olarak,</li>
+					<li>Lazer/InkJet yazıcıya olduğunda da yazıcı adı olarak kullanılır.</li>
+				</ul>
+			</li>
+		</ul>
+		Aynı anda birden fazla Hedef'e sahip olabilirsiniz böylece farklı firma, fiş, dekont ve bordrolar için farklı hedefleri kullanabilirsiniz. İlk kurulumla beraber ön tanımlı olarak üç adet hedef tanımlı gelir;
+		<ul>
+			<li>to_file : Dosyaya</li>
+			<li>to_lazer: Lazer yazıcıya</li>
+			<li>to_printer: Dot Matrix yazıcıya</li>
+		</ul>
+	</p>
+
+	<h3>Belge Tasarımları</h3>
+	<p>
+		Basımını yapmak istediğiniz fiş, dekont ve bordrolara ait tasarımları bu kısımda yaparsınız. Tasarımlar temel olarak iki guruba ayrılır; tek bölümden oluşan (sadece detay bandına sahip olanlar), birden çok bölümden oluşan (rapor başı, sayfa başı, detay, sayfa sonu ve rapor sonu bandına sahip olan) tasarımlar.
+		<p>
+			Cari, Kasa ve Banka dekontlarının belge tasarımları tek bölümden oluşurken Stok, Fatura, Çek/Senet Bordosu, Parçalı Çek Tahsilatı... gibi tablolu girişler birden çok bölümden oluşurlar.
+		</p>
+	</p>
+
+	<h4>Belge Tasarımındaki bölümler</h4>
+
+	<h5 class="indent-20">Bölümler için ortak bilgiler</h5>
+	<p class="indent-20">
+		<ul>
+			<li><span class="bordered">Satır Sayısı</span> 0 dan büyük bir değer olursa bu bölüm yazdırılır. </li>
+			<li><span class="bordered">Etiketler?</span> belge basımınızı matbuu bir form üzerine yapacaksanız ya da template kısmını kullanacaksanız bu değeri <strong>HAYIR</strong> yapmalısınız böylece dökümü yapılacak alan için ayrıca etiketi yazdırılmaz.</li>
+			<li>
+				Bölümler 3 kısımdan oluşur;
+				<ul>
+					<li><span class="bordered">Seçilebilir Alanlar</span> bölümünde kullanabileceğiniz alanlar bu kısımda listelenir.</li>
+					<li><span class="bordered">Seçilmiş Alanlar</span> bölümünde seçtiğiniz alanlar listelenir.</li>
+					<li><span class="bordered">Özellikler</span> Seçilmiş Alanların özelliklerini bu kısımda belirtirsiniz. Satır, sütun, format... gibi.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+	<h5 class="indent-20">Bölümler</h5>
+	<p>
+		<dl class="dl-horizontal">
+			<dt>Rapor Başı </dt>
+			<dd>Sadece döküm işlemi başlarken bir kereliğine en üst kısımda yazdırılır.</dd>
+			<dt>Sayfa Başı </dt>
+			<dd>Her yeni sayfa dökümü başlarken üst kısımda bir kereliğine yazdırılır. İlk sayfada Rapor Başı bölümü varsa bundan sonra yazdırılacaktır.</dd>
+			<dt>Detay </dt>
+			<dd>Diğer bölümlerin (rapor ile sayfa başı ve sonu bölümleri) kapladıkları alanlardan arta kalan alanın tamamı detay satırları yazdırmak için kullanılır.</dd>
+			<dt>Sayfa Sonu </dt>
+			<dd>Her sayfanın alt kısımda bir kereliğine yazdırılır.</dd>
+			<dt>Rapor Sonu </dt>
+			<dd>Tüm döküm işlemi bittikten sonra bir kereliğine en alt kısımda yazdırılır.</dd>
+		</dl>
+	</p>
+
+	<h4>Sayfa bilgileri</h4>
+	<p>
+		Bölümlerin dışında belgenin sayfa yapısının nasıl olacağı bu kısımdan belirlenir, kullanabileceğiniz alanlar;
+		<ul>
+			<li>
+				<span class="bordered">Sayfalama</span> Bu alan <strong>EVET</strong> ya da <strong>HAYIR</strong> değerlerinde birisi olabilir. Hayır seçeneğinde her döküm işleminde sayfa sayısına bakmaksızın rapor başı, sayfa başı, sayfa sonu ve rapor sonu bölümleri sadece bir kereliğine yazdırılır. Evet seçeneğinde ise, sayfadaki satır sayısı kadar satır yazdırıldıktan sonra sayfa sonu ve başı yazdırılır.
+			</li>
+			<li>
+				<span class="bordered">Satır Sayısı</span> Bir sayfada toplam kaç satır olduğunun bilgisidir. Her bir bölümdeki satır sayısının toplamı sayfanın satır sayısını geçemez. Ayrıca detay bölümünün kaç satıra yazdırılacağı da sayfanın satır sayısından sayfa başı ve sayfa sonu bölümlerinin toplam satır sayısı çıkarılarak bulunur.
+			</li>
+			<li>
+				<span class="bordered">Marj Alanları</span> Döküm işlemine, Sol: sol kenardan, Sağ: sağ kenardan, Üst: üst kenardan ne kadar içeriden başlanılacağını belirtir.
+			</li>
+			<li>
+				<span class="bordered">Nakli Yekün Alanı</span> Stok Fişleri veya Alış-Satış Faturaları gibi stok işlemlerinde döküm işlemi bir sayfadan uzun sürdüğü zaman, ikinci sayfanın ilk satırı olarak bir önceki sayfalardan gelen Nakli Yekün Toplamı yazdırılır. Bu alan ile toplamı alınacak alanı belirtebilirsiniz.
+			</li>
+			<li>
+				<span class="bordered">Başlık Tipi</span> Detay bölümde kullandığınız alanlar için her sayfa başı bölümü yazdırıldıktan sonra yazdırılacak olan kolon başlıklarının nasıl görüneceğini bu kısımda belirtirsiniz. Dört kısımdan oluşur;
+				<ul>
+					<li><strong>YOK</strong> : Kolon başlığı çıkarılmaz.</li>
+					<li><strong>SADE</strong> : Her sayfada detay satırları başlamadan önce (sayfa başı yazdırıldıktan hemen sonra) kolon başlığı eklenir. </li>
+					<li><strong>ÇİZGİLİ</strong> : Kolon başlığını iki çizgi arasına ekler bu şekilde sayfa başı bölümünden sonra 3 satır eklenmiş olur. </li>
+					<li><strong>ÇİZGİSİZ</strong> : Kolon başlığını iki boş satırın arasına ekler yine 3 satır eklenmiş olur.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+	<h4>Template kullanımı</h4>
+	<p>
+		Sayfa tasarımınız için hazır olarak belirli bir şablon kullanmak isterseniz bu kısmı kullanabilirsiniz. Bu kısımda metin tabanlı olarak tasarlayacağınız şablon otomatik olarak belgenin alt kısmına, kullandığınız alanlar ise bu şablon tasarımının üstüne yerleştirilecektir.
+	</p>
+
+	<h3>Yeni bir tasarım eklerken</h3>
+	<p>
+		Hangi tür belge tasarlayacağınız (cari, kasa, stok, çek...) ekle butonuna bastığınızda sorulur. Böylece temel tasarım ayrımına gidilir. Tasarım kısmında ise fiş, dekont, bordro... türü (borç dekonto, giriş fişi, çek çıkış bordrosu...) bilgisi sizden istenir.
+	</p>
+
+	<h3>Belgelerin dışa aktarılması</h3>
+	<p>
+		Bu özellik Belge Tasarımları liste formunun alt kısmında bulunur. Tasarladığınız belgelerinizi dışa aktararak başka bir seyhan uygulamasında kullanabilirsiniz. Ürettiği dosyanın formatı json' dur. Üretilen dosyayı herhangi bir metin editöründe açıp düzenleyebilirsiniz. Kullanmak istediğinizde tarayıcınız Dosya Kaydet diyalogu açacaktır.
+	</p>
+
+	<h3>Belgelerin içe aktarılması</h3>
+	<p>
+		Dosya sisteminizde bulunan ve daha önceden dışa akatrmış olduğunuz belge tasarımlarınızı burayı kullanarak içe aktarabilirsiniz. Kullanmak istediğinizde hemen alt kısımda dosya seçim kutucuğu çıkacaktır. Bu kutucuğu kullanmadan kapatmak isterseniz tekrar İçe Aktar butonuna basabilirsiniz.
+	</p>

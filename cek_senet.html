@@ -1,0 +1,203 @@
+	<div class="page-header">
+		<h1>Çek ve Senet Modülü</h1>
+		<p class="lead">Çek ve Senet hareketlerinin takip edildiği modüldür.</p>
+	</div>
+
+	<div class="bs-callout bs-callout-info">
+		Çek ve Senet işlemleri büyük oranda benzerlik gösterdikleri için her iki modüle ait bilgilendirme bu kısımda yapılacaktır. Ayrıca anlatım Çek üzerine olacaktır.
+	</div>
+
+	<h4>Bordrolar</h4>
+	<p>
+		Çek bordroları iki ana kısım altında dört bölüme ayrılırlar. 
+		<div>Ana kısımlar;</div>
+		<ul>
+			<li><span class="bordered">M.Ç.</span> : Müşteri Çeklerini</li>
+			<li><span class="bordered">F.Ç.</span> : Firma Çeklerini gösterir</li>
+		</ul>
+		<div>Bordrolar;</div>
+		<ul>
+			<li>Giriş / Çıkış Bordrosu : Müşteri/Firma çeklerinin girildiği kısımdır.</li>
+			<li>Hareket Bordrosu : Çeklerin durumları değiştiğinde kullanılan kısımdır.</li>
+			<li>Parçalı Tahsilar Ödeme Bordrosu : Parçalı Tahsil/Ödeme durumunda olan Müşteri/Firma çeklerinin girildiği kısımdır.</li>
+			<li>Açılış Bordrosu : İlk kullanımda elinizde var olan çekleri girdiğiniz kısımdır.</li>
+		</ul>
+		<p>
+			Bordroları yazdırma hakkında detaylı bilgi için <a type="button" href="#/printing/printing" class="btn btn-default btn-xs active">Belge Basımları</a> kısmına bakabilirsiniz.
+		</p>
+	</p>
+
+	<h4>Çek Türleri</h4>
+	<p>
+		Kullanacağınız çeklerinizi türlerine göre guruplamak isterseniz bu kısmı kullanabilirsiniz. Bu kısmı kullanarak rapor ve listelerinizde daha fazla denetim sağlayabilirsiniz.
+	</p>
+
+	<h4>Bordro Kaynakları</h4>
+	<p>
+		Bordrolarınızı işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. Bordro Kaynakları'nın hangi bordrolarda kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
+	</p>
+
+	<h4>İnceleme Formu</h4>
+	<p>
+		Bir çeke ait pek çok bilgiyi özet olarak gösteren formdur. Bu forma bordro satırlarında, üzerinde <span class="glyphicon glyphicon-search"></span> simgesi olan butonu klikleyerek erişebilirsiniz. İki kısımdan oluşur;
+		<ul>
+			<li>Çek Bilgileri   : Çekin önemli özet bilgileri buradadır.</li>
+			<li>Hareket Tablosu : Çekin şimdiye kadar gördüğü tüm hareketlerin tarihsel olarak sondan başa doğru listelendiği kısımdır.</li>
+		</ul>
+	</p>
+
+	<h4>Giriş/Çıkış bordrolarında sıralı çek ekleme</h4>
+	<p>
+		Bu kısmı kullanarak, sıralı çeklerinizi bir kerede bordrolarınıza girebilirsiniz. Sıralı çek oluştururken;
+		<ul>
+			<li>Adet : Oluşturmak istediğiniz çek adedidir. En az 1 en fazla da 36 değerleri verilebilir.</li>
+			<li>Mesafe : Her bir çekin bir önce oluşturulan çeke olan mesafesidir. En az 1 en fazla da 365 değerleri verilebilir.</li>
+			<li>Periyodu : Mesafenin periyodudur. Günlük, Aylık ve Haftalık olabilir.</li>
+			<li>Vadesi : İlk çek için vadedir, diğer oluşacak çekler bunun üzerine vadelendirilirler.</li>
+			<li>Tutar : Çeklerin tutarıdır.</li>
+		</ul>
+
+		<div class="bs-example">
+			Sıralı çek yapısını daha iyi anlamak için örnek senaryo:
+			<ul>
+				<li>Adet : 3</li>
+				<li>Mesafe : 1</li>
+				<li>Periyodu : Aylık</li>
+				<li>Vadesi : 30/10/2015</li>
+				<li>Tutar : 250</li>
+			</ul>
+			değerleri ile oluşturulan sıralı çekler şöyle olacaktır.
+			<table class="table table-bordered">
+				<colgroup>
+					<col class="col-xs-1">
+					<col class="col-xs-1">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>Vadesi</th>
+						<th>Tutarı</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>30/10/2015</td><td>250</td></tr>
+					<tr><td>30/11/2015</td><td>250</td></tr>
+					<tr><td>30/12/2015</td><td>250</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</p>
+
+	<div class="bs-callout bs-callout-danger">
+		<h4>Dikkat!</h4>
+		<ol>
+			<li>Giriş bordrolarında eklenen çeklerin vadesi bordro tarihinden önce olamaz!</li>
+			<li>Giriş bordrosunun çeklerinden herhangi birisi hareket gördüğünde, bordro düzenleme işlemlerine kapatılır!</li>
+			<li>Eklenen her bir çekin portföy numarası otomatik olarak sistem tarafından verilir!</li>
+		</ol>
+	</div>
+
+	<div class="bs-callout bs-callout-warning">
+		Tüm veri giriş formları özel alanları için <a type="button" href="#/others/special-fields" class="btn btn-default btn-xs active">Özel Alanlar</a> kısmına ve arama formları hakkında detaylı bilgi için de <a type="button" href="#/others/list-forms" class="btn btn-default btn-xs active">Liste Formları</a> kısmına bakabilirsiniz.
+	</div>
+
+	<h4>Parçalı çek tahsilatı/ödemesi</h4>
+	<p>
+		Bu kısımda çeklerinizin ödemesini / tahsilatını parçalı olarak yapabilirsiniz. Giriş formu olarak fiş girişlerine benzer. Yapılan tahsilatın/ödemenin tarihi, tutarı ve açıklaması çek bazında girilebilir. Sadece Potföyde olan çekler ile ödemesi tamamlanmamış çekler parçalı olarak tahsil edilebilir. Bu pozisyondaki çekler başka pozisyonlara geçemezler.
+	</p>
+
+	<h4>Hareket bordrolarında çek seçip hareketlendirme</h4>
+	<p>
+		Giriş bordrolarında eklediğiniz çekleri hareket bordroları ile herketlendirirsiniz. Hareketlendirme işlemi temel olarak iki bilgi üzerinden yapılır; Nereden, Nereye.
+		<div><span class="bordered">Nereden</span> Hareketlendirmek istediğimiz çekin şuan bulunduğu pozisyonu gösterir. Seçim formu açıldığında bu pozisyondaki çekler listelenir.</div>
+		<div><span class="bordered">Nereye</span> Seçtiğiniz çeklerin yeni poziyonudur. Hareket bordrosunu kaydettiğinizde seçmiş olduğunuz çeklerin son durumu bu pozisyon olacaktır.</div>
+	</p>
+
+	<h4>Çek pozisyonları</h4>
+	<p>
+		İşlem gören çeklerin bulundukları pozisyonlara göre alabilecekleri yeni pozisyonlar:
+		<div><span class="bordered">Portföyde</span> Müşteri Giriş bordroları ile sisteme eklenen çekler ilk olarak bu pozisyonda kaydedilir. Hareket bordrolarında alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Tahsil Edildi</li>
+			<li>Cirolu</li>
+			<li>Tahsilata Verilen</li>
+			<li>Teminata Verildi</li>
+			<li>İade Edildi</li>
+			<li>Karşılıksız</li>
+		</ul>
+		<div><span class="bordered">Verildi</span> Firma Çıkış bordroları ile verilen çekler ilk olarak bu pozisyonda kaydedilir. Hareket bordrolarında alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Elden Ödendi</li>
+			<li>Bankadan Ödendi</li>
+		</ul>
+		<div><span class="bordered">Cirolu</span> Aldığımız çeki bir başkasına verdiğimizde bu pozisyonda kaydedilir ve alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Portföyde</li>
+			<li>Karşılıksız</li>
+			<li>Kapandı</li>
+		</ul>
+		<div><span class="bordered">Tahsilata Verilen</span> <span class="bordered">Teminata Verildi</span> Banka hesabımıza geçsin diye bankaya tahsilata/teminata verdiğimiz çekler bu pozisyonda kaydedilir. Alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Hesaba Geçti</li>
+			<li>Portföyde</li>
+			<li>Karşılıksız</li>
+		</ul>
+		<div><span class="bordered">Karşılıksız</span> Ödenmeyen çekler bu pozisyonda kaydedilir. Alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Tahsil Edildi</li>
+			<li>Hesaba Geçti</li>
+			<li>Portföyde</li>
+			<li>Takipte</li>
+			<li>Kapandı</li>
+		</ul>
+		<div><span class="bordered">Takipte</span> Ödeme durumunda sorun olan çekler bu pozisyonda kaydedilir. Alabileceği yeni pozisyonlar ise;</div>
+		<ul>
+			<li>Tahsil Edildi</li>
+			<li>Hesaba Geçti</li>
+			<li>Portföyde</li>
+			<li>Kapandı</li>
+		</ul>
+
+		<div class="bs-callout bs-callout-info">
+			<h4>Son Pozisyon olarak değerlendirilen pozisyonlar;</h4>
+			<ul>
+				<li><span class="bordered">Tahsil Edildi</span></li>
+				<li><span class="bordered">Hesaba Geçti</span></li>
+				<li><span class="bordered">İade Edildi</span></li>
+			</ul>
+			bu pozisyonlar sadece <span class="bordered">Kapandı</span> pozisyona geçebilirler ve kapanan çekler bir daha işlem göremezler!
+
+			<p>
+				<h4>Bazı pozisyonlar hesaplara yansıma yapar. Bunlar;</h4>
+				<ul>
+					<li><span class="bordered">Cirolu</span> Cari hesaba</li>
+					<li><span class="bordered">Tahsil Edildi</span> veya <span class="bordered">Elden Ödendi</span> Kasa hesabına</li>
+					<li><span class="bordered">Tahsilata Verilen</span>, <span class="bordered">Teminata Verildi</span> veya <span class="bordered">Hesaba Geçti</span> pozisyonlarına geçirilen çekler de Banka hesabına tutarları kadar borç ya da alacak yansıması yaparlar.</li>
+				</ul>
+			</p>
+		</div>
+	</p>
+
+	<h4>Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>Çek Listesi : Belirli vadeler arasındaki çekleri listeler. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Vade Yıl/Ayı</li>
+		 			<li>Cari</li>
+		 			<li>Banka</li>
+		 			<li>Banka Hesabı</li>
+		 			<li>Ödeme Yeri</li>
+		 			<li>Son Durum</li>
+		 			<li>Tip</li>
+		 			<li>Para Birimi</li>
+		 			<li>Vade Yılı</li>
+		 			<li>Vade Günü</li>
+		 			<li>İşlem Kaynağı</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz.
+		 	</li>
+		 	<li>Parçalı Çek Listesi : Parçalı ödemesi - tahsilatı yapılan çekleri listeler. Özet ve detay şeklinde alınabilir.</li>
+		 	<li>Bordro Listeleri : Giriş ve Hareket bordrolarını listeler. Özet ve detay şeklinde alınabilir.</li>
+		 </ul>
+	</p>

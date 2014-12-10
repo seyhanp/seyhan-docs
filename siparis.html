@@ -1,0 +1,93 @@
+	<div class="page-header">
+		<h1>Sipariş Modülü</h1>
+		<p class="lead">Satış öncesi alınan ve verilen siparişlerinizi bu modülde takip edebilirsiniz. Stok ve Cari modülleri ile doğrudan bağlantılı olduğu için öncelikle bu modüllerdeki tanımlamalarınızı yapmış olmanız gerekir.</p>
+	</div>
+
+	<h4>Sipariş Fişleri</h4>
+	<p>
+		Sipariş fişleri iki kısımdan oluşmaktadır.
+		<ul>
+			<li>Sipariş aldığınızda Alınan Sipariş Fişi kısmını,</li> 
+			<li>Sipariş verdiğinizde de Verilen Sipariş Fişi kısmını kullanırsınız.</li> 
+		</ul>
+		<p>
+			Sipariş fişlerindeki tablolu giriş hakkında detaylı bilgi için <a type="button" href="#/others/stock-tabs" class="btn btn-default btn-xs active">Stok Tabları</a> kısmına ve sipariş fişlerini yazdırma hakkında detaylı bilgi için de <a type="button" href="#/printing/printing" class="btn btn-default btn-xs active">Belge Basımları</a> kısmına bakabilirsiniz. Ayrıca fişlerde bulunan fiyat kolonlarının olup/olmamasını istiyorsanız bunu da, Genel>Profil Tanımları::Sipariş tabı <span class="bordered">Fiyatlı Çalışma</span> kısmından belirleyebilirsiniz.
+		</p>
+	</p>
+
+	<h4>Fiş Kaynakları</h4>
+	<p>
+		Sipariş hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. Fiş Kaynakları'nın hangi tür fişlerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
+	</p>
+
+	<h4>Sipariş Onaylama Adımları</h4>
+	<p>
+		Her girilen sipariş fişi <span class="bordered">Beklemede</span> statüsünde kaydedilir. Girdiğiniz alım-satım sipariş fişlerini İrsaliye veya Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
+	</p>
+
+	<p>
+		<div>
+			<strong>1. Arama-Bulma adımı</strong>
+		</div>
+		Onaylamak istediğiniz sipariş fişlerini öncelikle bu kısımdan (cari hesabına, teslim tarihine, statüsüne, fiş tipine... göre) bulmalısınız.
+
+		<div class="vspace-15">
+			<strong>2. Onaylama adımı</strong>
+		</div>
+		1. adımda bulduğunuz fişler aşağıda, Arama Sonuçları kısmında listelenir. Onaylamak istediğiniz fişlerin en solunda bulunan checkbox kutucuğunu aktif hale getirip, üst kısımda bulunan onaylama butonlarından birisini seçersiniz.
+		<div>
+			Onaylama Butonları
+			<ul>
+				<li><u>İrsaliye Oluşur</u> : Seçtiğiniz siparişlere ait irsaliyeleri oluşturur.</li>
+				<li><u>Fatura Oluşur</u> : Seçtiğiniz siparişlere ait faturaları oluşturur.</li>
+				<li><u>Vazgeçildi</u> :  Seçtiğiniz siparişleri iptal statüsüne geçirir.</li>
+			</ul>
+		</div>
+	</p>
+	<p>
+		<div class="bs-callout bs-callout-info">
+			<div class="indent-20">- Sipariş fişleri (irsaliye ya da fatura şeklinde) onaylanmadıkça stoklara yansıma olmaz.</div>
+			<div class="indent-20">- Onaylanan sipariş fişleri tekar düzenlenemez ve silinemez! Bunu yapabilmek için öncelikle onay irsaliyesi/faturasını silmeniz gerekir.</div>
+		</div>
+	</p>
+	<p>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Oluşum Tipi</h4>
+			<p>
+				Birden fazla sipariş fişi onayladığınız durumlarda, fişlerinizin tek tek ya da cari hesap bazında guruplanarak birleştirilmesini istiyorsanız bunu, Genel>Profil Tanımları::Sipariş tabı <span class="bordered">Oluşum Tipi</span> kısmından belirleyebilirsiniz.
+			</p>
+			<div class="bs-example">
+				Bir cari hesaba ait 3 adet sipariş fişini tek seferde onaylayacaksanız ve <span class="bordered">Oluşum Tipi</span>
+				<ul>
+					<li><u>Fişler Cari Hesap bazında guruplansın</u> seçilmişse, onaylama işlemi sonucunda 3 sipariş fişi tek bir irsaliye/fatura şeklinde guruplanarak onaylanır.</li>
+					<li><u>Her bir Fiş olduğu gibi onaylansın</u> seçilmişse, onaylama işlemi sonucunda 3 sipariş fişi için toplam 3 irsaliye/fatura oluşturulur.</li>
+				</ul>
+			</div>
+		</div>
+	</p>
+
+	<h4 class="vspace-25">Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>Sipariş Listesi : Sipariş Fişleri listesini verir. Özet ve Detay şeklinde alınabilir.</li>
+		 	<li>Dağılım Raporu : Stokların belirli tarihler arasındaki dağılımlarını verir. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Cari</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>Gün</li>
+		 			<li>Teslim Tarihi</li>
+		 			<li>Özel Kod</li>
+		 			<li>İşlem Noktası</li>
+		 			<li>Fiş Tipi</li>
+		 			<li>İşlem Kaynağı</li>
+		 			<li>Kategori</li>
+		 			<li>Depo</li>
+		 			<li>Gurup</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz. Ayrıca döküm şekli olarak <span class="bordered">Detay</span> ve <span class="bordered">Özet</span> seçeneklerini de kullanabilirsiniz.
+		 	</li>
+		 </ul>
+	</p>

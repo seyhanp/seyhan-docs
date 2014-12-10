@@ -1,0 +1,95 @@
+	<div class="page-header">
+		<h1>Admin/Yönetici Modülü</h1>
+		<p class="lead">Sadece Admin yetkisine sahip kullanıcılara açık olan ve yönetimsel işlerinin yapıldığı üst modüldür.</p>
+	</div>
+
+	<h4>Genel Ayarlar</h4>
+	<p>
+		Bu kısımda tüm modüllerin üzerinde olan işlemlerin ön değerleri verilir;
+		<ul>
+			<li><code>Firma Bilgisi</code> : Raporların üst kısmında çıkacak olan Firma Adı değeridir.</li>
+			<li><code>Kaynak</code> : Döviz kurlarının çekileceği kaynak bilgisidir. TC Merkez Bankası'nın Döviz ve Efektif kurlarından birisini seçebilirsiniz.</li>
+			<li>
+				<code>Periyodu</code> : Döviz kurlarının hangi sıklıkla çekileceği bilgisidir. Alabileceği değerler;
+				<ul>
+					<li><code>El ile</code> : Kur çekme işlemi otomatik olmaz bunun yerine günlük kurlarınızı kendiniz girersiniz.</li>
+					<li><code>Günde bir kez otomatik</code> : Otomatik olarak hergün saat 16:00 da kurlar çekilir.</li>
+					<li><code>Her saatte bir kez otomatik</code> : Bu parametre sonraki sürümlerde gelecek olan "serbest piyasa döviz kuru çekme" işlemlerinde kullanılacaktır.</li>
+					<li><code>Her 3 saatte bir kez otomatik</code> : Bu parametre sonraki sürümlerde gelecek olan "serbest piyasa döviz kuru çekme" işlemlerinde kullanılacaktır.</li>
+				</ul>
+			</li>
+			<li><code>Fark Yüzdesi</code> : Döviz kurlarını çekerken, değerlerinin olduğu gibi değil de belli bir yüzde kadar eksik ya da fazla olmasını istiyorsanız bu alanı kullanarak yapabilirsiniz. Birinci Fark Yüzdesi değeri ALIŞ fiyatını, ikincisi ise SATIŞ fiyatını etkiler. Gireceğiniz yüzdeyi Negatif verirseniz azalışa neden olur.</li>
+		</ul>
+	</p>
+
+	<h4>Kullanıcı Tanımları</h4>
+	<p>
+		Programınızı kullanacak olan kişileri bu kısımda tanıtırsınız. Her kullanıcının benzersiz bir <span class="bordered">Kullanıcı Adı</span> olmalıdır. <span class="bordered">Gurup</span> alanı ile kullanıcızı bir guruba bağlayarak gurubun haklarını verebilirsiniz ya da gurupsuz olarak tanımlamak istiyorsanız <span class="bordered">Admin</span> seçeneğini EVET yapabilirsiniz.
+	</p>
+
+	<div ng-include src="'includes/instant-users.html'"></div>
+
+	<h4>Kullanıcı Gurupları</h4>
+	<p>
+		Tanımlayacağınız kullanıcılarınız için ortak guruplar tanımlayabilirsiniz. Bu sayede; yetkilendirmelerinizi kullanıcılarınıza birer birer değil de topluca yapabilirsiniz. Guruba ait özellikler;
+		<ul>
+			<li>
+				<code>Düzenleme Sınırı</code> : Kullanıcının kayıtları düzenleme sınırını belirler, iki tip sınır verilebilir;
+				<ul>
+					<li>Sınırsız : Tüm kullanıcıların kayıtlarını düzenleyebilir</li>
+					<li>Sınırlı  : Sadece kendi oluşturduğu kayıtları düzenleyebilir</li>
+				</ul>
+			</li>
+			<li>
+				<code>Zamanaşımı</code> : Bu kısımda girilen değer Gün kabul edilir. 0' dan farklı bir değer verilirse kullanıcı o kadar günden önceki kayıtları düzenleyemez. 0 verilirse kısıtlama olmaz!
+			</li>
+			<li>
+				<code>Farklı Gün</code> : Bu değer HAYIR seçilirse kullanıcı sadece işlem yaptığı güne ait işlemleri düzenleyebilir aksi halde sadece inceleyebilir.
+			</li>
+			<li>
+				<code>Firmalar Tablosu</code> : Kullanıcıların tanımlı firmalarda hangi Rollerle çalışacakları bu tablo ile belirlenir.
+			</li>
+		</ul>
+	</p>
+
+	<h4>Kullanıcı Rolleri</h4>
+	<p>
+		Kullanıcıların modüllerde bulunan işlemler üzerindeki hakları/rolleri bu kısımda belirtilir. Bu kısmı kullanarak farklı roller tanımlayıp, Kullanıcı Guruplarınıza firmalarınız üzerindeki yetkilerini belirtebilirsiniz. Tanımlamak istediğiniz role <span class="bordered">Hazır Haklar</span> alanını kullanarak ön tanımlı hak ataması yapabilirsiniz. Rol atama işlemi sadece ekranda kolay bir şekilde hak verme işlemini yapmanız için sağlanan bir özelliktir. Rol/Hak seçenekleri modüllere göre tablara ayrılmıştır. İki tür hak vardır;
+		<ul>
+			<li>Rapor ve sadece tek bir işlemden oluşan formlar için hak seçenekleri; <code>Var</code> ve <code>Yok</code> tur.</li>
+			<li>Tanıtım ve İşlem formları için hak seçenekleri; <code>Yok</code>, <code>Okur</code>, <code>Ekler</code>, <code>Günceller</code> ve <code>Siler</code> dir.</li>
+		</ul>
+	</p>
+
+	<h4>Kullanıcı Hareketleri</h4>
+	<p>
+		Kullanıcılarınızın hareketlerini bu kısımdan inceleyebilirsiniz. Detaylı bir şekilde arama yapmak için de <a type="button" href="#/others/list-forms" class="btn btn-default btn-xs active">Liste Formları</a> kısmına bakabilirsiniz.
+	</p>
+
+	<h4>Firma Tanımları</h4>
+	<p>
+		Farklı firma, şube ya da hesap bilgilerinizi tek bir seyhan uygulaması içinde firma(lar) tanıtarak tutabilirsiniz. Firma tanımı ile ilgili olarak dikkat edilmesi gereken konular;
+		<ul>
+			<li>İlk kurulumla beraber hazır olarak seyhan isimli bir firma tanımı gelir.</li>
+			<li>seyhan, bilindik firma tanımlaması yerine <strong>çalışma alanı (workspace)</strong> kavramını kullanır.</li>
+			<li>
+				seyhan projesinde tanımlanan workspace ler fiziksel değil, mantıksaldır. Bunun anlamı; tanımlanan workspace lerin her birisi için ayrı bir veritabanı / şeması oluşturulmaz. Aynı veritabanı / şeması içerisinde workspace kolonu ile ayrıma gidilir. Fiziksel olarak tamamen farklı workspace lerde çalışmak istiyorsanız, farklı bir lokasyona yeni bir seyhan kurup (aynı sunucudaysa farklı bir port ve) farklı veritabanı ayarı ile çalıştırabilirsiniz.
+			</li>
+			<li>bir workspace tanımlandığında tarih aralığı kısıtlaması olmaz. İsterseniz, tarih aralığı verip workspace in çalışma dönemini belirleyebilirsiniz. Tarih aralığı verildiğinde, workspace başlama tarihinden önceki ya da bitiş tarihinden sonraki tarihlere ait işlemleri kabul etmeyecektir.</li>
+		</ul>
+	</p>
+
+	<h4>İki firma (workspace) arasında veri transferi</h4>
+	<p>
+		Tanımlamış olduğunuz iki workspace arasında sadece tanım tablolarını ya da hem tanım hem de hareketlerin devirlerini bu kısımdan yapabilirsiniz. Aktarım işlemlerini seçimlik olarak belirleyebilirsiniz, "sadece stok tanımları olsun", "cari tanımları ile beraber çek devirleri de olsun", "cari, kasa, banka tanımları ile beraber devirleri de olsun" ... gibi. Aktarım yaparken <span class="bordered">Kaynak Firma</span> bilgilerin okunacağı workspace olurken <span class="bordered">Hedef Firma</span> bilgilerin yazılacağı workspace olacaktır.
+	</p>
+
+	<h4>Ekstra Alanlar</h4>
+	<p>
+		Her işletme stok ve cari kartlarını tutarken ekstra olarak farklı bazı bilgileri tutmak isteyebilir. Bazı işletmeler stok kartlarında renk, beden, boy... (tekstil) gibi alanları görmek isterken bazı işletmeler de raf kodu, üreticisi... (yedek parça) gibi alanları görmek isteyebilir. Benzer şekilde cari hesapları tutarken de bu ihtiyaç ortaya çıkabilir. seyhan projesi bu ihtiyaçları karşılamak için stok ve cari kartlarına özel <span class="bordered">Ekstra Alan</span> tanımlama yapısı sunuyor. Bu alanlar stok ve cari için 10'ar adettir. Bu alanların her biri hem tanımlama ekranlarında hem de rapor ve listelerdeki filtreleme formlarında kullanılabilir. İlk kurulumla beraber Cari modülü için Gurup ve Bölge ek alanları hazır gelirken, Stok için Gurup ek alanı hazır gelir. İsterseniz bu kısmı kullanarak işletmenize özel ek alanları tanımlayabilirsiniz. Kulllanmak istemediğiniz bir ek alanın <span class="bordered">Aktif?</span> alanını <strong>HAYIR</strong> yapabilirsiniz. Yeni bir ek alan tanımı için, var olan ek alanlardan birisinin adını ve aktifliğini (<strong>EVET</strong>) değiştirmelisiniz.
+	</p>
+
+	<h4>Profiller</h4>
+	<p>
+		Profiller hakkında bilgiye <span class="fa fa-cogs"> Ayarlar menüsünden ya da doğrudan <a type="button" href="#/others/profiles" class="btn btn-default btn-xs active">Burdan</a> erişebilirsiniz.
+	</p>

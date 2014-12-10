@@ -1,0 +1,45 @@
+	<div class="page-header">
+		<h3>Satış Faturası (KDV dağılım tablolu) için örnek belge tasarım</h3>
+	</div>
+
+	<h4><a href="downloads/sample04.json" download>Bu tasarımı indirmek için burayı klikleyiniz!</a></h4>
+
+  <div ng-include src="'includes/printing-infos.html'"></div>
+
+	<h4>Çıktısı</h4>
+	<p>
+		<pre style="width: 70%">
+   CARI KODU : CTK400                                            FIŞ NO :      8
+         ADI : BONCUK MARKET                                      TARIH : 06/12/2014 11:33:05
+
+--- ------------ ------------------------------ ----- ------ -------- ---------- --- ---- ---- ---- --------- ------------
+ NO KODU         STOK ADI                       MIKTA BIRIM     FIYAT      TUTAR KDV ISK1 ISK2 ISK3  ISK TUT.       TOPLAM
+--- ------------ ------------------------------ ----- ------ -------- ---------- --- ---- ---- ---- --------- ------------
+  1 BTK200       BIANCI 24 CANT                    10 Adet     425.00   4,250.00  18   10    5    5    819.19     3,430.81
+  2 BTK201       BIANCI 26 JANT                    10 Adet     435.00   4,350.00  18   10    5    5    838.46     3,511.54
+  3 BTK202       BIANCI 28 JANT                    10 Adet     445.00   4,450.00  18   10    5    5    857.74     3,592.26
+  4 BTK100       SALCANO 24 JANT                   15 Adet     370.00   5,550.00  18   10    0    0    555.00     4,995.00
+  5 BTK101       SALCANO 26 JANT                   15 Adet     395.00   5,925.00   8   10    0    0    592.50     5,332.50
+  6 BTK102       SALCANO 28 JANT                   15 Adet     550.00   8,250.00   8   10    0    0    825.00     7,425.00
+  7 BTK300       BISAN 24 JANT                     20 Adet     475.00   9,500.00   1   10    5    0  1,377.50     8,122.50
+  8 BTK301       BISAN 26 JANT                     20 Adet     435.00   8,700.00   1   10    5    0  1,261.50     7,438.50
+  9 BKT303       BISAN 28 JANT                     20 Adet     500.00  10,000.00  18   10    5    0  1,450.00     8,550.00
+                                                                                                --------------------------
+              KDV DAĞILIM TABLOSU                                                                    TOPLAM :    60,975.00
+              --------------------------------------                                           INDIRIM TOPL.:     8,576.89
+              | Oran |       Matrah |        Tutar |                                             ARA TOPLAM :    52,398.11
+              --------------------------------------                                            KDV TOPLAMI :     5,510.55
+              | %  1 |    15,561.00 |       155.61 |                                             NET TOPLAM :    52,398.11
+              | %  8 |    12,757.50 |     1,020.60 |
+              | % 18 |    24,079.61 |     4,334.34 |
+              --------------------------------------
+YAZI İLE : (elliikibinüçyüzdoksansekiz-lira, onbir-kuruş)
+
+
+
+
+
+
+
+--- ------------ ------------------------------ ----- ------ -------- ---------- --- ---- ---- ---- --------- ------------</pre>
+	</p>

@@ -1,0 +1,91 @@
+.glyphicon .indent {
+	padding-right : 10px;
+}
+
+.indent-20 {
+    text-indent: 20px;
+}
+
+.width120 {
+    width: 120px;
+    float: left;
+}
+
+.vspace-15 {
+    margin-top: 15px;
+}
+.vspace-25 {
+	margin-top: 25px;
+}
+
+.type-ahead {
+	color:green;
+	font-weight:bold;
+}
+
+.bordered {
+    background-color: lightyellow;
+	border: 1px solid green;
+	padding : 0 4px;
+	color: red;
+    font-size: 95%;
+    border-radius: 4px;
+}
+
+.bs-example:after {
+    content: "Örnek";
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+    color: #fff;
+}
+
+.navbar .nav > li > a {
+    padding: 10px 6px;
+}
+
+.navbar-inverse .brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-inner {
+    background: none repeat scroll 0 0 #444;
+    box-shadow: 0 1px 4px #ccc;
+}
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #FFFFFF;
+    background: none repeat scroll 0 0 #474544;
+}
+
+.navbar .brand {
+    padding: 10px;
+    outline: none;
+}
+
+.navbar {
+    min-height: 40px;
+}
+
+.red {
+    color: red;
+}
+
+.vmenu {
+    margin-left: 20px;
+    width: 100px;
+}
+
+.dl-horizontal dd {
+    margin-top: 2px;
+    margin-left: 110px;
+}
+
+.dl-horizontal dt {
+    color: #444;
+    background-color: lightblue;
+    border: 1px double gray;
+    margin: 2px;
+    padding-right: 5px;
+    width: 110px;
+}

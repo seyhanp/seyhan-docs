@@ -1,0 +1,56 @@
+	<div class="page-header">
+		<h1>Genel Modülü</h1>
+		<p class="lead">Diğer tüm modüller için ortak tanımlara sahiptir ve bu kısım kendi başına bir modül değildir. </p>
+	</div>
+
+	<h4>İşlem Noktaları</h4>
+	<p>
+		İşlem Noktası tanımları ile tüm modüllerdeki hareket/işlem kayıtlarınızın, işlem gördükleri yerleri belirleyerek, rapor ve listelerde daha fazla kontrol sağlayabilirsiniz. İşlem Noktaları basamaklı olarak tanımlanabilir. Bir İşlem Noktası başka bir İşlem Noktasının altında ya da üstünde olabilir.
+	</p>
+
+	<h4>Özel Kodlar</h4>
+	<p>
+		İşlem Noktası tanımıyla tamamen aynı özelliklere sahiptir. Ekstra olarak bu tanımlamanın olmasının nedeni; hareket/işlem kayıtlarınızı bulurken ya da raporlarken daha fazka kontrol sağlayabilmenize olana sağlamaktır.
+	</p>
+
+	<h4>Döviz Birimleri</h4>
+	<p>
+		Kullanacağınız para birimleri bu kısımda tanımlanır. İlk kurulumla beraber genelde kullanılan para birimleri hazır gelir ve bunlarda USD ile EUR olanlarının dışındakiler pasif durumdadır. Standart para birimleri dışında bu kısımda, ALTIN, PETROL... gibi farklı değerler de tanımlanabilir.
+		<div class="bs-callout bs-callout-warning">
+			<h4>Otomatik çekilen kur bilgileri için uyarı</h4>
+			TC Merkez Bankası döviz kurlarından otomatik çekilen kur bilgileri tanımlanan para biriminin <span class="bordered">Kodu</span> alanına göre olmaktadır. Bu alanın farklı olması durumunda kur bilgisi gelmeyecektir.
+		</div>
+	</p>
+
+	<h4>Döviz Kurları</h4>
+	<p>
+		Döviz Kurları kısmında tanımlı ve aktif durumda olan para birimleri için alış ve satış değerlerini iki şekilde girebilirsiniz;
+		<div>
+			<strong>1 - Otomatik</strong> <small> ( Otomatik kur çekim işlemi için internet bağlantınızın olması gerekiyor! )</small>
+			<div>
+				Kullanacağınız döviz kur değerlerini (şuan için sadece) TC Merkez Bankası efektif ve döviz kurlarından çekebilirsiniz. Kurları çekerken size ait özel durumlar varsa, örneğin:
+				<ul>
+					<li>Merkez Bankasının hangi kur tablosunun kullanılacağını (Efektif | Döviz)</li>
+					<li>Alış - Satış fiyatlarının doğrudan değil de biraz az/fazla gelmesini</li>
+					<li>Kur bilgilerinin çekim zamanını ve sıklığını</li>
+				</ul>
+				belirlemek istiyorsanız Admin>Genel Ayarlar kısmını kullanabilirsiniz.
+			</div>
+		</div>
+		<div class="vspace-15">
+			<strong>2 - Manuel</strong>
+			<div>
+				Döviz Kurları Listesini açtıktan sonra <span class="bordered">Yeni bir Döviz Kuru ekle</span> butonunu kliklerseniz döviz kurlarını el ile belirleyebilirsiniz.
+			</div>
+		</div>
+		<div class="bs-callout bs-callout-info">
+			Tatil günlerine denk gelen günlerde, sisteme alınmış en son döviz bilgileri kullanılır!
+		</div>
+	</p>
+
+	<h4>Profil Tanımları</h4>
+	<p>
+		Bu bölümün detaylı ayrıntıları için <a type="button" href="#/others/profiles" class="btn btn-default btn-xs active">Profiller ve Sistem Parametreleri</a> kısmına bakabilirsiniz.
+	</p>
+
+<?php include_once('imports/footer.inc'); ?>

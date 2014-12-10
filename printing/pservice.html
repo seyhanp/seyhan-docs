@@ -1,0 +1,100 @@
+	<div class="page-header">
+		<h1>Yazdırma Servisi</h1>
+		<p class="lead">Kompleks belge basım işlerinin yapıldığı servistir.</p>
+	</div>
+
+	<div class="bs-callout bs-callout-info">
+		seyhan, uzak belge basımları için iletişim kanalı olarak kuyruk yapısını kullanır, bilgisayarınızda ya da ağınızda firewall/virüs koruması nedeni ile port engllemesi varsa Yazdırma Servisinin portu için izin vermelisiniz! Yazdırma servisinin bulunması gereken yer, merkezi yazıcınızın olduğu bilgisayardır.
+	</div>
+
+	<h3>Servisin Kullanım Durumları</h3>
+	<p>
+		Yazdırma Servisinin kullanıldığı durumlar;
+		<ul>
+			<li>seyhan projesini farklı bir ağdan kullanmak istediğinizde, (sunucunuz Almanya'da olması gibi)</li>
+			<li>Kullanacağınız yazıcı farklı ağda olduğunda,</li>
+			<li>Farklı belgeler için farklı yazıcıları kullanmak istediğinizde,</li>
+			<li>Herkes için merkezi bir yazıcı kullanmak istediğinizde,</li>
+			<li>Çıktılarınızın hedeflerini değiştirmek istediğinizde,</li>
+			<li>Fiş tipi, kullanıcı adı, firma, ... gibi alanlara göre ayrıma giderek belirli belgeleri bastırmak istediğinizde kullanırsınız.</li>
+		</ul>
+		Yazdırma Servisinin kullanılmadığı durum; yazıcınız doğrudan kullandığınız bilgisayara bağlıysa Yazdırma Servisi'ne ihtiyacınız olmaz, doğrudan belge basımı yapabilirsiniz!
+	</p>
+
+	<h3>Kurulum</h3>
+	<p>
+		Kurulum için pservice-x.x.x.zip dosyasını uygun olan bir dizine açmanız yeterlidir. Lütfen dikkat, kullanacağınız bilgisayarda Java JDK 6+ yüklü olması gerekiyor!
+	</p>
+
+	<h3>Ayarlar</h3>
+	<p>
+		Ayarlarınızı pservice dizini altında bulunan conf dizinindeki <code>pservice.properties</code> dosyasından belirleyebilirsiniz.
+		<div>Uygulama anahtarları;</div>
+		<ul>
+			<li><code>app.port</code> : seyhan' ın çalıştığı sunucudaki port bilgisidir. Ön tanımlı olarak <strong>9000</strong> gelir.</li>
+			<li>
+				<code>app.queue.uri</code> : Belge basımları için açılan kuyruğun uri bilgisidir. Ön tanımlı olarak <strong>failover:(tcp://localhost:61616)</strong> gelir. Burdaki localhost bilgisini kendi sunucunuzun ip/domain bilgisi ile değiştirmeniz gerekir.
+			</li>
+		</ul>
+
+		<div>Filtre anahtarları;</div>
+		<ul>
+			<li><code>filter.usernames</code> : Bu değer ile sadece belirli kullanıcı(lar)dan gelen belgeleri alır. super, admin... gibi.</li>
+			<li><code>filter.userips</code> : Sadece belirli ip lerden gelen belgeleri alır. 10.3.2.4, 10.3.2.6... gibi.</li>
+			<li><code>filter.userip.regex</code> : Belirli ip bloklarından gelen belgeleri alır. Buradaki değer Regular Expression formatında olmalıdır. 10.3.*, 10.5.*... gibi örneklerle 10.3 ve 10.5 ile başlayan tüm ip lerden gelenler dikkate alınacaktır.</li>
+			<li><code>filter.workspaces</code> : Bu kısımda belirtilen firma/firmaların belgelerini alır.</li>
+			<li><code>filter.doc.types</code> : Sadece bu kısımda belirtilen belge türlerini alır. CARI_BORC_DEKONTU, STOK_GIRIS_FISI, FATR_SATIS_FATURASI... gibi.</li>
+			<li>
+				<code>filter.target.names</code> : Bu değer ile sadece belirli hedeflere gönderilmiş belgeler dikkate alınır. Bu anahtar boş olamaz ve buradaki değerler Admin>Belgeler::Belge Hedefleri kısmında tanıtılan hedef/hedefler olabilir!
+			</li>
+		</ul>
+
+		<div>Yeniden yapılandırma anahtarları; bu kısımdaki anahtar degerleri verilmez ya da boş verilirse, tanımlanmış hedefin kendi değeri dikkate alınır. Hedef değiştirme için kullanılabilir.</div>
+		<ul>
+			<li><code>override.path.FILE</code> : Dosyaya çıkacak belgeler için yeni yol bilgisi.</li>
+			<li><code>override.name.LASER</code> : Lazer/termal/inkjet... (grafik tabanlı) yazıcıya çıkacak belgeler için yeni yazıcı adı bilgisi. Sisteminizde tanımladığınız yazıcı adına göre bulunur.</li>
+			<li><code>override.path.DOT_MATRIX</code> : Nokta vuruşlu yazıcıya çıkacak belgeler için yeni yol bilgisi.</li>
+		</ul>
+	</p>
+	<p>
+		Sonunda 's' harfi bulunan anahtarlar için birden fazla değer verilebilir! Kullanmak istemediğiniz anahtarı kapatmak için başına <kbd>#</kbd> karakterini koyabilirsiniz.
+		<div class="bs-example">
+			<code>filter.target.names</code> anahtari icin: <strong>remote_printer</strong> verilirse sadece remote_printer hedefini dikkate alir.<br/>
+			<strong>remote_printer,remote_file</strong> verilirse hem remote_printer hem de remote_file hedefini birden dikkate alir.
+		</div>
+		<div class="bs-example">
+			<code>filter.usernames</code> anahtari icin: <strong>super</strong> verilirse sadece super kullanıcısından gelen belgeleri dikkate alir.<br/>
+			<strong>super,admin</strong> verilirse hem super hem de admin kullanıcısından gelen belgeleri dikkate alir.
+		</div>
+	</p>
+
+	<h3>Çalıştırma</h3>
+	<p>
+		<div class="highlight">
+			<pre>
+				<code class="language-bash" data-lang="bash">$ ./run.sh</code>
+			</pre>
+		</div>
+		dedikten sonra komut satırı sizden kullanıcı adı ve parolanızı ister. Burdaki kullanıcı bilgisi seyhan' da tanımlı kullanıcılardan birisi olabilir!
+
+		<p>
+			<div class="highlight">
+				<pre>
+					<code class="language-bash" data-lang="bash">&gt userame: super
+&gt password for super: </code>
+				</pre>
+			</div>
+		</p>
+
+		doğru kullanıcı adı ve şifresini girdikten sonra aşağıdaki gibi log satırları görürsünüz.
+		<p>
+			<div class="highlight">
+				<pre><code class="language-bash" data-lang="bash">2014-12-06 07:31:30,311 INFO  [main] (Service:55) Authentication URL : http://x.x.x.x:9000/as/pservice/check_user?username=super
+2014-12-06 07:31:30,314 INFO  [main] (Service:56) Connecting to the app. server, please wait...
+2014-12-06 07:31:30,607 INFO  [main] (Service:66) For super user, authentication result is { ok } 
+2014-12-06 07:31:30,622 INFO  [main] (Consumer:20) Messages queue will be esablished over failover:(tcp://x.x.x.x:61616)
+2014-12-06 07:31:31,593 INFO  [main] (Consumer:30) Messages queue has esablished successfuly!</code>
+				</pre>
+			</div>
+		</p>
+	</p>

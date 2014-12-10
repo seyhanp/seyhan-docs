@@ -1,0 +1,276 @@
+	<div class="page-header">
+		<h1>Stok Modülü</h1>
+		<p class="lead">Alım-Satımı yapılan ticari malların takip edildiği modüldür.</p>
+	</div>
+
+	<h4>Stok Kart Tanımları</h4>
+	<p>
+		Hareketlerini takip etmek istediğiniz ticari mallarınızın detaylı olarak tanımlandığı kısımdır. Her stoğun benzersiz (tekil) bir Stok Kodu ve Adı olabilir.
+	</p>
+	<p>
+		<div class="indent-20">
+			<strong>Kodlama</strong>
+		</div>
+		Kodlama sisteminiz belirli bir düzende artıyorsa <span class="bordered">Stok Kodu</span> alanının yanında bulunan <span class="glyphicon glyphicon-play-circle"></span> butonu ile son kullanılan kod değerinin bir fazlasını bulabilirsiniz.
+		<ul>
+			<li>Daha önceden eklenmiş herhangi bir kayıt yoksa boş gelecektir. </li>
+			<li>Kayıtlı son kod değerinin <span class="bordered">00123</span> olduğunu varsayarak; Stok Kodu alanını boş bırakıp bu butona basarsanız yeni elde edeceğiniz kod <span class="bordered">0012<b>4</b></span> olacaktır.</li>
+			<li>Kayıtlı son kod değerinin <span class="bordered">TM.123</span> olduğunu varsayarak; Stok Kodu alanına <span class="bordered">TM</span> yazıp bu butona basarsanız yeni elde edeceğiniz kod <span class="bordered">TM.12<b>4</b></span> olacaktır.</li>
+		</ul>
+	</p>
+	<p>
+		<div class="indent-20">
+			<strong>Barkodlar</strong>
+		</div>
+		Barkodlu çalışabilmek için herhangi bir özel işlem yapmanız gerekmez. Her stok kartı biri ana olmak üzere ve pek çok barkoda sahip olabilir. <u>Stok Adı</u> alının altında bulunan <span class="bordered">Barkod</span> alanını kullanarak stoğun birincil barkodunu tanımlayabilirsiniz.
+		Bununla beraber alt kısımda bulunan Barkod tabından da, istediğiniz kadar barkodu stoğunuzla ilişkilendirebilirsiniz. Stoğunuza bağlayacağınız barkodlar tekil olmalıdır, daha önceden kullanılan bir barkod başka bir kart için kullanılamaz. Barkod tabındaki kolonların görevleri;
+		<ul>
+			<li><u>Barkod</u> : Ürünün barkodu.</li>
+			<li><u>Ön Ek</u> : Stok fişlerinde bu barkod kullanılarak seçilen ürünün adının önüne gelmesini istediğiniz ön ek için bu alanı kullanabilirsiniz.</li>
+			<li><u>Son Ek</u> : Stok fişlerinde seçilen ürünün adının sonuna gelmesini istediğiniz son ek için bu alanı kullanabilirsiniz.</li>
+			<li><u>Birim No</u> : Yine stok fişlerinde seçilen ürünün farklı bir birimden işlem görmesi için bu alanı kullanabilirsiniz.</li>
+		</ul>
+		<div class="bs-example">
+			Barkod tablosunu daha iyi anlayabilmek için örnek olarak yeni bir stok kartı tanımladığımızı varsayalım ve tanımlarken verdiğimiz değerler de:
+			<ul>
+				<li>Kodu : 001</li>
+				<li>Adı : Bisküvi</li>
+				<li>Barkodu : 123</li>
+				<li>Birim 1 : Adet</li>
+				<li>Birim 2 : Paket</li>
+				<li>
+					Barkod tablosunda ise;
+					<div>
+						<ul>
+							<li>Barkodu : 1231, Ön Ek : Çikolatalı, Birim No : 1</li>
+							<li>Barkodu : 1232, Son Ek : Özel Sunum, Birim No : 2</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			şeklinde olsun. Bu durumda bir ürün için üç adet barkod ataması yapmış olduk. Stok fişlerinde bu ürünü farklı barkodlarından seçmek istersek tablolara yansıması şu şekilde olacaktır:
+			<div>
+				<ul>
+					<li>
+						Barkodu : 123 girersek;
+						<div>
+							Adı : Gofret, Birimi : Adet olur.
+						</div>
+					</li>
+					<li>
+						Barkodu : 1231 girersek;
+						<div>
+							Adı : <span class="red">Çikolatalı</span> Gofret, Birimi : Adet olur.
+						</div>
+					</li>
+					<li>
+						Barkodu : 1232 girersek;
+						<div>
+							Adı : Gofret <span class="red">Özel Sunum</span>, Birimi : <span class="red">Paket</span> olur.
+						</div>
+					</li>
+				</ul>
+			</div>
+			dikkat ederseniz her üç durumda da aynı stok işlem görmüş oldu.
+		</div>
+		<div class="bs-callout bs-callout-info">
+			<h4>Barkodlu arama için özel durum!</h4>
+			<p>
+				Barkod okuturken bir kerede aynı üründen birden fazla okutma yapacaksanız bunun için barkodu okutmadan önce <span class="bordered">adet<b>x</b></span>  yazıp sonra barkodu okutursanız, stoğun miktarı otomatik olarak vermiş olduğunuz adet kadar olacaktır.
+				<div class="bs-example">
+					Barkodu 89614532 olan bir stoktan 7 adet giriş/çıkış yapacaksanız, barkodu okutmadan önce 7x yazıp sonra barkodu okutursanız miktar olarak 7 gelecektir. Barkod okutma alanının görünümü 7x89614532 olacaktır.
+				</div>
+			</p>
+		</div>
+	</p>
+	<p>
+		<div class="indent-20">
+			<strong>Diğer Alanlar</strong>
+		</div>
+		<ul>
+			<li>Pirim Oranı : Satıcılarınıza sattıkları ürünlere göre pirim vermek istiyorsanız bu alanı kullanabilirsiniz.</li>
+			<li>Limitler : Bir stoğun bulundurma maliyetlerini düşürmek için alım ve satım miktarlarına bu alanlar yardımı ile sınırlama getirebilrisiniz. 
+				Limitleme işleminin yapılabilmesi için Genel>Profil Tanımları::Stok tabından <span class="bordered">Limit Kontrolü</span> değerini değiştirebilirsiniz.
+				<div class="bs-callout bs-callout-warning">
+				 	<span class="bordered">Limit Kontrolü</span> aktif hale getirirseniz ekstra denetimler ve veritabanı sorguları olacağı için sisteminizde biraz yavaşlama yaşarsınız!
+				</div>
+			</li>
+		</ul>
+	</p>
+
+	<h4>Stok Fişleri</h4>
+	<p>
+		Stok Fişleri altı kısımdan oluşmaktadır.
+		<ul>
+			<li>Stok girişi yapmak istediğinizde Stok Giriş Fişi kısmını,</li> 
+			<li>Stok çıkışı yapmak istediğinizde Stok Çıkış Fişi kısmını,</li> 
+			<li>Stok çıkışının iadesini yapmak istediğinizde Stok Çıkış İade Fişi kısmını (bu fişi kullanırsanız depoya giriş işlemi yansıyacaktır),</li> 
+			<li>Stok girişinin iadesini yapmak istediğinizde Stok Giriş İade Fişi kısmını (bu fişi kullanırsanız depodan çıkış işlemi olacaktır),</li> 
+			<li>Stoklarınızı iki deponuz arasında transfer etmek istediğinizde Transfer Fişi kısmını,</li> 
+			<li>Daha önceden var olan stok miktarlarını ilk kullanımda sisteme aktarmak için de Stok Açılış Fişi kısmını kullanırsınız.</li> 
+		</ul>
+
+		<p>
+			Stok fişlerindeki tablolu giriş hakkında detaylı bilgi için <a type="button" href="#/others/stock-tabs" class="btn btn-default btn-xs active">Stok Tabları</a> kısmına, 
+			kaydettiğiniz stok fişlerini yazdırma hakkında detaylı bilgi için de <a type="button" href="#/printing/printing" class="btn btn-default btn-xs active">Belge Basımları</a> kısmına bakabilirsiniz.
+		</p>
+	</p>
+
+	<h4>Fiş Kaynakları</h4>
+	<p>
+		Stok hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. Fiş Kaynakları'nın hangi tür fişlerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
+		Ayrıca (bu işlem kaynağını kullanan) fişlerin maliyet hesaplamalarına yansıyıp yansımayacağını da belirleyebilirsiniz (devir, konsinye, transfer ... fişleri).
+	</p>
+
+	<h4>Basit Tanımlar</h4>
+	<ul>
+		<li>
+			Her işletmenin stok kartlarını tutma yönteminde bazı farklılıklar olabilir. Bu farklılıklar daha çok Ek Bilgi girişlerinde ortaya çıkar. Firmadan firmaya değişiklik gösteren bu ek bilgileri 
+			Admin>Ekstra Alanlar>Stok Alanları menüsünden ekleyip çıkarabilirsiniz. İlk kurulumda Stok kartları için Gurup, Marka, Model, Raf... gibi tanımlar hazır olarak gelir. 
+		</li>
+		<li>
+			Kategori Tanımları ile stoklarınızı kategorilere ayırıp rapor ve listelerde daha fazla kontrol sağlayabilirsiniz. Stok kategorileri basamaklı olarak tanımlanabilir. Bir kategori başka bir kategorinin altında ya da üstünde olabilir.
+		</li>
+		<li>
+			En az bir depo tanımlı olmak zorundadır, stok hareketlerinin tamamı depo tanımı üzerine yapılır.
+		</li>
+		<div class="bs-callout bs-callout-warning">
+			<h4>Birim Tanımları</h4>
+			<p>
+				Stok hareketlerini birimli yapabilmek için Birim Tanımları kısmını kullanırsınız. Her stoğun en az bir tane birimi olmak zorundadır. Bir stoğun tüm hareketleri birinci birimine göre olur yani rapor, liste ve analizler birinci birimden hesaplanır. Bu yüzden birinci birim alanına stoğun herzaman kullanılan birimini yazmanız doğru olacaktır.
+			</p>
+			<p>
+				<u>Dikkat</u>; 6'lı soda alım-satımı yapan bir firmada hiçbir zaman 1 Adet soda satışı olmayacaksa, stok kartını tanıtırken birinci birim olarak Adet yerine Paket kullanmalıdır.
+			</p>
+			<p>
+				Stok tanımındaki Birimi Katsayıları : Ürün birimleri her zaman birinci birime göre katsayı alırlar. Birinci birimi Adet olan bir ürünün Paketinde 6 Adet, Kolisinde de 5 Paket varsa, Katsayılar şu şekilde olmalıdır: Katsayı 1 = 6  (Adet), Katsayı 2 = 30 (Adet)
+			</p>
+		</div>
+	</ul>
+
+	<h4>Diğer İşlemler</h4>
+
+	<p>
+		<div class="indent-20">
+			<strong>Maliyet Hesaplamaları</strong>
+		</div>
+		Stok Envanter, Kar/Zarar Raporu ve Stok Devir Fişi gibi bazı yerler maliyet hesaplamaları üzerine hareket ederler. Bu gibi yerlerde işlem yapmadan (rapor almadan) önce mutlaka bu kısımdan maliyetlendirme yapılmış olması gerekir. Beş farklı maliyetlendirme yapabilirsiniz;
+		<ul>
+			<li><u>Basit Ortalama</u> : Satın alınan malların birim alış fiyatlarının toplanarak, toplam miktarlarına bölünmesiyle bulunur.</li>
+			<li><u>Ağırlıklı Ortalama</u> : Satın alınan mal miktarı ile birim fiyatı çarpılarak miktarlara göre ağırlık verilir. Mal miktarları ile birim fiyatları çarpımı olan mal alış değerleri toplamının alınan toplam mal miktarına bölünmesiyle bulunur.</li>
+			<li><u>Hareketli Ortalama</u> : Her yeni alış ve satış durumunda işletmede bulunan mal mevcutlarının ortalama birim maliyeti hesaplanır. Böylece, her yeni işlemde mevcut mal stoklarının maliyet değeri ve her satış işleminde satılan malın ortalama birim maliyeti ve toplam maliyet değeri bulunur.</li>
+			<li><u>FIFO</u> : İlk alınan malların ilk satılacakları varsayımı üzerine, satılan malların maliyeti ilk giriş maliyetinden hesaplanarak bulunur.</li>
+			<li><u>LIFO</u> : Son alınan malların ilk satılacakları varsayımı üzerine, satılan malların maliyeti son giriş maliyetinden hesaplanarak bulunur.</li>
+		</ul>
+	</p>
+
+	<p>
+		<div class="indent-20">
+			<strong >Maliyet Faktörleri</strong>
+		</div>
+		Stok ve Fatura girişlerinizde alınan-satılan mallar için fazladan maliyet, indirim ya da vergi  (kargo, hamaliye, özel indirimler... gibi) oluşuyorsa ve bunları mallarınızın kar/zarar hesaplamalarında kullanacaksanız bu faktörleri buradan tanımlayabilirsiniz.
+		Faktörleri tanımlarken kullanacağınız alanlar;
+		<ul>
+			<li><u>Hesaplama</u> : Dahil veya Hariç olabilir. Dahil olması durumunda, bu faktörün toplam mal bedeli içerisinde olduğu kabul edilir. KDV dahil/hariç hesaplaması gibi işlem görür.</li>
+			<li><u>Faktör Tipi</u> : Vergi, İndirim ve Masraf olabilir. Bunlardan sadece İndirim seçeneği maliyeti azaltır.</li>
+			<li><u>Etki Tipi</u> : Yüzde veya Tutar olabilir. Yüzde seçilirse toplam üzerinde yine toplamın yüzdesi kadar etkisi olur. Tutar seçeneğinde ise doğrudan tutar yansıtılır.</li>
+			<li><u>Etki</u> : Toplama etki edecek Yüzde ya da Tutardır.</li>
+		</ul>
+	</p>
+
+	<p>
+		<div class="indent-20">
+			<strong>Toplu Fiyat Güncelleme</strong>
+		</div>
+		Bu kısımda, stok kartlarınızın alış/satış fiyatlarını topluca (ya da belli kritere uyanları) arttırıp-azaltabilirsiniz. Yaptığınız işlem hatalı olursa "Yapılan son işlemi geri al!" butonu ile son fiyat güncelleme(leri)nizi geri alabilirsiniz.
+		<ul>
+			<li><u>Etki Tipi</u> : Yüzde veya Tutar olabilir. Yüzde seçilirse fiyatlar üzerinde yine fiyatların yüzdesi kadar etkisi olur. Tutar seçeneğinde ise doğrudan tutar yansıtılır.</li>
+			<li><u>Etki</u> : Fiyata etki edecek Yüzde ya da Tutardır.</li>
+			<li><u>Etki Yönü</u> : Etkinin Artış-Azalış yönünü belirtir.</li>
+		</ul>
+	</p>
+
+	<p>
+		<div class="indent-20">
+			<strong>Fiyat Listesi</strong>
+		</div>
+		Cari hesaplarınızla alım-satım işlemleri yaparken stoklarınızın özel bir fiyat listesi üzerinden işlem görmesini isterseniz bu kısmı kullanabilirsiniz. Bu kısımda tanıttığınız Fiyat Listesi'ni daha sonra kullanmak istediğiniz Cari Hesapların kart tanımlarında belirtmelisiniz. 
+		Fiyat listelerindeki fiyatlar kalıcı değil, formül yapısındadır; stok kartlarınızın fiyatını değiştirdiğinizde fiyat listelerinizi de güncellemeniz gerekmez. Fiyat listelerinizi oluştururken belirlediğiniz kriterler her zaman stokların aktif fiyatları üzerdinden anlık olarak hesaplanır.
+		<ul>
+			<li><u>Fiyat</u> : Hangi fiyatlarda dikkate alınacağı belirtilir.</li>
+			<li><u>Etki Tipi</u> : Yüzde veya Tutar olabilir. Yüzde seçilirse fiyatlar üzerinde yine fiyatların yüzdesi kadar etkisi olur. Tutar seçeneğinde ise doğrudan tutar yansıtılır.</li>
+			<li><u>Etki</u> : Fiyata etki edecek Yüzde ya da Tutardır.</li>
+			<li><u>Etki Yönü</u> : Etkinin Artış-Azalış yönünü belirtir.</li>
+		</ul>
+	</p>
+
+	<h4 class="vspace-25">Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>Stok Listesi : Tanımlı stokların listesini verir.</li>
+		 	<li>Fiş Listesi : Stok Fişleri listesini verir. Bu rapordaki fişler, başka modüllerden kaynaklanan işlemler de olabilir! Özet ve Detay şeklinde alınabilir.</li>
+		 	<li>Top N Raporu : En fazla ya da En az satılan-alınan-iadesi olan stokların belli sayıda gösterildiği bir analiz raporudur, bu rapora özel kriterler;
+		 		<ul>
+		 			<li><u>İlk</u> : Raporda toplam kaç satır stok buluncağı bu değer ile belirlenir. Top N ismindeki N harfinin karşılığıdır.</li>
+		 			<li><u>Sıralama Alanı</u> : Giriş, Çıkış ve bunların iade hareketlerinin tutarları veya miktarlarıdır.</li>
+		 			<li><u>Sıralama Yönü</u> : Azalan seçilirse En fazladan En aza doğru, Artan seçilirsede En azdan En fazlaya doğru sıralanır.</li>
+		 		</ul>
+		 	</li>
+		 	<li>İcmal Raporu : Stokların belirli tarihler arasındaki giriş, çıkış ve bunların iadelerinin tutar ve miktar toplamlarını verir. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>İşlem Kaynağı</li>
+		 			<li>Cari</li>
+		 			<li>Satıcı</li>
+		 			<li>Depo</li>
+		 			<li>Gurup</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz.
+		 	</li>
+		 	<li>Hareket Raporu : Stokların belirli tarihler arasındaki hareketlerini verir. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Cari</li>
+		 			<li>Satıcı</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>Gün</li>
+		 			<li>Teslim Tarihi</li>
+		 			<li>Özel Kod</li>
+		 			<li>İşlem Noktası</li>
+		 			<li>Fiş Tipi</li>
+		 			<li>İşlem Kaynağı</li>
+		 			<li>Kategori</li>
+		 			<li>Depo</li>
+		 			<li>Gurup</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz. Ayrıca döküm şekli olarak <span class="bordered">Detay</span> ve <span class="bordered">Özet</span> seçeneklerini de kullanabilirsiniz.
+		 	</li>
+		 	<li>Durum Raporu : Stokların belirli tarihler arasındaki giriş, çıkış ve kalan miktarı ile seçilen fiyata göre ederlerini gösteren rapordur.</li>
+		 	<li>Envanter Raporu : Durum Raporu gibi çalışır, farklı olarak stok ederlerini maliyetlendirme üzerinden yapar.</li>
+		 	<li>Kar/Zarar Raporu : Satılan malların maliyetlendirme seçeneğine göre kar/zarar durumlarını gösteren rapordur.
+		 		<ul>
+		 			<li>Stok</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz.
+		 	</li>
+		 	<li>Son İşlem Raporu : Belirli tarihler arasında, stoklarla yapılan en son işlemleri listeler.</li>
+		 	<li>Bekleyen Stoklar Raporu : Belirli tarihler arasında, (seçilen maliyetlendirme seçeneğine göre) satışı olmayan stokları listeler.</li>
+		 	<li>Hareketsiz Stoklar Raporu : Bu rapor da belirli tarihler arasında, hiç işlem görmeyen stokları listeler.</li>
+		 </ul>
+	</p>
+
+	<h4>İnceleme Formu</h4>
+	<p>
+		Bir stoğa ait pek çok bilgiyi özet olarak gösteren formdur. Bu forma Stok giriş tablolaları kısmından, üzerinde <span class="glyphicon glyphicon-search"></span> simgesi olan butonu klikleyerek erişebilirsiniz. Üç kısımdan oluşur;
+		<ul>
+			<li>İşlemler  : Stoğun tüm hareketleri özet olarak yer alır.</li>
+			<li>Bilgi     : Stok kartındaki detaylar yer alır.</li>
+			<li>Toplamlar : İşlemler kısmındaki hareketlerin, para birimi ve aylara göre toplam giriş ve çıkışları ile bunlara ait iade tutar ve miktarların depo bazında dağılımlarını gösteren tablo yer alır.</li>
+		</ul>
+	</p>

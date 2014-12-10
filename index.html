@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="seyhanDocApp">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Mustafa DUMLUPINAR" />
+	<meta name="description" content="Seyhan Project için dökümantasyon projesi." />
+	
+	<title>Seyhan Dökümantasyon</title>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/docs.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/seyhan.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/accordian.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css" />
+
+	<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/angular-animate.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" href="#/"><img src="img/seyhan_d_d.png" style="height:50px" title="Ana sayfaya gider"></img></a>
+		</div>
+	</div>
+
+	<div class="container-fluid vspace-25">
+		<div class="row">
+			<div id="accordian_body" class="col-xs-3 col-md-2" style="padding-left: 0;padding-right: 0;">
+				<div id="accordian">
+					<ul>
+						<li id="modules">
+							<h3><a href="javascript:void(0);"><span class="glyphicon glyphicon-list-alt"></span>Modüller</a></h3>
+							<ul>
+								<li><a href="#/stok">Stok</a></li>
+								<li><a href="#/cari">Cari</a></li>
+								<li><a href="#/kasa">Kasa</a></li>
+								<li><a href="#/banka">Banka</a></li>
+								<li><a href="#/cek_senet">Çek ve Senet</a></li>
+								<li><a href="#/siparis">Sipariş</a></li>
+								<li><a href="#/irsaliye">İrsaliye</a></li>
+								<li><a href="#/fatura">Fatura</a></li>
+								<li><a href="#/satis">Satış</a></li>
+								<li><a href="#/genel">Genel</a></li>
+								<li><a href="#/admin">Admin/Yönetici</a></li>
+							</ul>
+						</li>
+						<li id="printing">
+							<h3><a href="javascript:void(0);"><span class="glyphicon glyphicon-print"></span>Belge Basımları</a></h3>
+							<ul>
+								<li><a href="#/printing/printing">Temel Bilgiler</a></li>
+								<li><a href="#/printing/pservice">Yazdırma Servisi</a></li>
+								<li><a href="#/printing/sample01">Örnek 1 : Stok Çıkış Fişi</a></li>
+								<li><a href="#/printing/sample02">Örnek 2 : Satış Faturası (Basit)</a></li>
+								<li><a href="#/printing/sample03">Örnek 3 : Satış Faturası (Kur tablolu)</a></li>
+								<li><a href="#/printing/sample04">Örnek 4 : Satış Faturası (KDV dağılım tablolu)</a></li>
+								<li><a href="#/printing/sample05">Örnek 5 : Cari Borç Dekontu</a></li>
+								<li><a href="#/printing/sample06">Örnek 6 : Firma Çek Çıkış Bordrosu</a></li>
+							</ul>
+						</li>
+						<li id="common">
+							<h3><a href="javascript:void(0);"><span class="glyphicon glyphicon-screenshot"></span>Genel Formlar</a></h3>
+							<ul>
+								<li><a href="#/others/list-forms">Liste Formları</a></li>
+								<li><a href="#/others/report-forms">Rapor Fromları</a></li>
+								<li><a href="#/others/special-fields">Özel Alanlar</a></li>
+							</ul>
+						</li>
+						<li id="settings">
+							<h3><a href="javascript:void(0);"><span class="fa fa-cogs"></span>Ayarlar</a></h3>
+							<ul>
+								<li><a href="#/others/profiles">Profiller</a></li>
+								<li><a href="#/others/database">Veritabanı Ayarları</a></li>
+							</ul>
+						</li>
+						<li id="screenshots">
+							<h3><a href="javascript:void(0);"><span class="fa fa-camera-retro"></span>Ekran Görüntüleri</a></h3>
+							<ul>
+								<li><a href="javascript:void(0);">Versiyon 1.0</a></li>
+							</ul>
+						</li>
+						<li id="infos">
+							<h3><a href="javascript:void(0);"><span class="fa fa-newspaper-o"></span>Genel Bilgiler</a></h3>
+							<ul>
+								<li><a href="#/others/informations">Dikkat Etmeniz Gerekenler</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+				<div ng-view data-autoscroll></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#accordian a").click(function(){
+				var link = $(this);
+				var closest_ul = link.closest("ul");
+				var parallel_active_links = closest_ul.find(".active")
+				var closest_li = link.closest("li");
+				var link_status = closest_li.hasClass("active");
+				var count = 0;
+
+				closest_ul.find("ul").slideUp(function(){
+					if(++count == closest_ul.find("ul").length)
+						parallel_active_links.removeClass("active");
+				});
+
+				if (! link_status) {
+					closest_li.children("ul").slideDown();
+					closest_li.addClass("active");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

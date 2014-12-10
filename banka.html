@@ -1,0 +1,69 @@
+	<div class="page-header">
+		<h1>Banka Modülü</h1>
+		<p class="lead">Banka hesap hareketlerinin takip edildiği modüldür.</p>
+	</div>
+
+	<h4>Banka Hesap Tanımları</h4>
+	<p>
+		Kullanacağınız banka hesaplarını bu kısımda tanıtırsınız. Her hesabın benzersiz (tekil) bir Hesap Numarası ve Adı olabilir. Banka hesabını tanımlarken para birimi seçilmezse, hesap tüm para birimleri ile çalışabilir. Herhangi bir para birimi seçilirse bu, hesabın sadece seçilen para birimi ile çalışacağı anlamına gelir.
+	</p>
+
+	<h4>İşlemler</h4>
+	<p>
+		Banka İşlemleri üç kısımdan oluşmaktadır.
+		<ul>
+			<li>Para Yatırma Fişi,</li> 
+			<li>Para Çekme Fişi,</li> 
+			<li>Ve daha önceden var olan hesap bakiyelerini ilk kullanımda sisteme aktarmak için de Banka Açılış Fişini kullanırsınız.</li> 
+		</ul>
+
+		<p>
+			İşlemleri yazdırma hakkında detaylı bilgi için <a type="button" href="#/printing/printing" class="btn btn-default btn-xs active">Belge Basımları</a> kısmına bakabilirsiniz.
+		</p>
+	</p>
+
+	<h4>Masraf Tanımları</h4>
+	<p>
+		Banka işlemleri sırasında yaptığınız masrafları bu kısımda tanıtabilirsiniz. Raporlarda, işlemlerinizi yapmış olduğunuz Masraf Tanımlarına göre guruplayabilirsiniz.
+	</p>
+
+	<h4>İşlem Kaynakları</h4>
+	<p>
+		Banka hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. İşlem Kaynakları'nın hangi tür fişlerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
+	</p>
+
+	<div class="bs-callout bs-callout-warning">
+		Tüm veri giriş formları özel alanları için <a type="button" href="#/others/special-fields" class="btn btn-default btn-xs active">Özel Alanlar</a> kısmına ve arama formları hakkında detaylı bilgi için de <a type="button" href="#/others/list-forms" class="btn btn-default btn-xs active">Liste Formları</a> kısmına bakabilirsiniz.
+	</div>
+
+	<h4>Raporlar Listeler</h4>
+	<p>
+		 Rapor ve Liste formları hakkında genel bilgi edinmek için <a type="button" href="#/others/report-forms" class="btn btn-default btn-xs active">Rapor ve Liste Formları</a> kısmına bakabilirsiniz.
+		 <ul>
+		 	<li>Günlük Durum Raporu : Verilen tarihler arasında her bir banka için bir günlük olacak şekilde Dünden Devir, Borç, Alacak, Bakiye ve Yarına Devir bilgilerini listeler.</li>
+		 	<li>Bakiye Raporu : Banka hesaplarının belirli bir tarihe göre bakiyelerini verir.</li>
+		 	<li>İşlem Listesi : Bankalara ait gerçekleşmiş işlemlerin listesini verir. Bu rapordaki işlemler, başka modüllerden kaynaklanan işlemler de olabilir!</li>
+		 	<li>Hareket Raporu : Bankaların belirli tarihler arasındaki hareketlerini verir. Rapor Tipi filtresini kullanarak raporlarınızı;
+		 		<ul>
+		 			<li>Banka Hesabı</li>
+		 			<li>Yıl</li>
+		 			<li>Yıl/Ay</li>
+		 			<li>Gün</li>
+		 			<li>Özel Kod</li>
+		 			<li>İşlem Noktası</li>
+		 			<li>Fiş Tipi</li>
+		 			<li>İşlem Kaynağı</li>
+		 		</ul>
+		 		bazında guruplayarak alabilirsiniz. Ayrıca döküm şekli olarak <span class="bordered">Detay</span> ve <span class="bordered">Özet</span> seçeneklerini de kullanabilirsiniz.
+		 	</li>
+		 </ul>
+	</p>
+
+	<h4>İnceleme Formu</h4>
+	<p>
+		Bir banka hesabına ait pek çok bilgiyi özet olarak gösteren formdur. Bu forma Hesap Tanımları Listesi kısmından, üzerinde <span class="glyphicon glyphicon-search"></span> simgesi olan butonu klikleyerek erişebilirsiniz. İki kısımdan oluşur;
+		<ul>
+			<li>İşlemler  : Banka hesabının tüm hareketleri özet olarak yer alır.</li>
+			<li>Toplamlar : İşlemler kısmındaki hareketlerin, para birimi ve aylara göre toplam borç, alacak ve bakiye dağılımlarını gösteren tablo yer alır.</li>
+		</ul>
+	</p>

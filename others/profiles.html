@@ -1,0 +1,131 @@
+	<div class="page-header">
+		<h1>Profiller</h1>
+		<p class="lead">Program parametrelerin tanımlandığı bölümdür. Bu bölümdeki parametreler yardımı ile programın kısmi olarak firmanıza özel davranmasını sağlayabilirsiniz.</p>
+	</div>
+
+	<h3>Ön Bilgilendirme</h3>
+	<p>
+		Profil tanımını wi-fi tanımı gibi düşünebilirsiniz; farklı ortamlarda daha önceden kaydoluğunuz kablosuz ağlara bağlanıp kullanırsınız. Başka bir değişle; parametre tanımlarınızı bir kere yapmak yerine sayısız kere tanımlayıp, duruma göre geçiş yapabilirsiniz. Anlık olarak Profiller arası geçişi ana formun sağ üst köşesinde bulunan ve simgesi <span class="glyphicon glyphicon-chevron-left"></span> olan Settings panelinden yapabilirsiniz. İlk kurulumla beraber ön tanımlı olarak <span class="bordered">default</span> profili gelir. Burdaki ayarları değiştirip kullanabilirsiniz.
+	</p>
+	<p>
+		Tüm modüllerin parametreleri arasında bulunan <code>Arama Paneli</code> alanı hakkında ortak tanımlama; fiş ve tanım ekranlarında ilk etapta gelen arama ve listeleme formları için Detaylı Arama Paneli' nin olup olmayacağı bu değer ile belirlenir.
+	</p>
+
+	<h3>Stok modülü</h3>
+	<p>
+		<ul>
+			<li><code>Depo</code> Stok giriş tablolarında depo alanı için ön tanımlı olarak bu değer kullanılır.</li>
+			<li><code>Birim</code> Stok kartlarını tanımlarken, birinci birim bilgisi için ön tanımlı olarak bu değer kullanılır.</li>
+			<li><code>KDV%</code> Stok kartlarını tanımlarken, kdv alanı için ön tanımlı olarak bu değer kullanılır.</li>
+			<li><code>Yuvarlama</code> Stok fişlerinde kullanılır. Bir değer seçilmezse yuvarlama yapılmaz. 0 seçilirse sadece kuruşlar yuvarlanır. 1 seçilirse ilk haneye kadar yuvarlanır.</li>
+			<li><code>KDV Durumu</code> Stok giriş tablolarındaki KDV durumunu belirlemek için ön tanımlı olarak bu değer kullanılır.</li>
+			<li><code>Satır Birleşimi</code> Stok girişi yapılan fişlerde aynı koda ve fiyata sahip stokların tek satır halinde kaydedilmesini belirlemek için ön tanımlı olarak bu değer kullanılır.</li>
+			<li><code>Arama Paneli</code> Stok fiş ve tanım ekranlarında ilk etapta gelen arama ve listeleme formları için Detaylı Arama Paneli' nin olup olmayacağı bu değer ile belirlenir.</li>
+			<li><code>Alanların Görünürlüğü</code> Ftok fişlerinde ekstra olarak üç alan daha kullanabilirsiniz; Seri No, ÖTV ve ÖİV. Bu kısımdan bu alanların görünürlüğünü belirleyebilirsiniz.</li>
+			<li><code>Limit Kontrolü?</code> Stok giriş-çıkış işlemleri esnasında depo miktarlarının kart tanıtımındaki minimum ve maksimum değerler dışında olmasını engellemek için bu değer kullanılır. Limit kontrolleri ekstra veritabanı sorguları yapacağı için yavaşlamalar yaşanabilir.</li>
+		</ul>
+	</p>
+
+	<h3>Sipariş modülü</h3>
+	<p>
+		<ul>
+			<li><code>Fiyatlı Çalışma?</code> Sipariş fişlerinde fiyat alanlarının çıkıp-çıkmayacağı bu değere göre belirlenir.</li>
+			<li>
+				<code>Oluşum Tipi</code> Sipariş onaylama formunda fişlerin nasıl oluşacağı burdan belirlenir.
+				<ul>
+					<li><u>Her bir Fiş olduğu gibi onaylansın</u> seçilmişse, onaylama işlemi sonucunda seçilen sipariş fişleri için birer adet irsaliye/fatura oluşturulur.</li>
+					<li><u>Fişler Cari Hesap bazında guruplansın</u> seçilmişse, onaylama işlemi sonucunda seçilen sipariş fişleri cariler bazında tek bir irsaliye/fatura şeklinde guruplanarak onaylanır.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+	<h3>İrsaliye modülü</h3>
+	<p>
+		<ul>
+			<li><code>Fiyatlı Çalışma?</code> İrsaliye fişlerinde fiyat alanlarının çıkıp-çıkmayacağı bu değere göre belirlenir.</li>
+			<li>
+				<code>Oluşum Tipi</code> İrsaliye onaylama formunda irsaliyelerin nasıl oluşacağı burdan belirlenir.
+				<ul>
+					<li><u>Her bir Fiş olduğu gibi onaylansın</u> seçilmişse, onaylama işlemi sonucunda seçilen irsaliyeler için birer adet fatura oluşturulur.</li>
+					<li><u>Fişler Cari Hesap bazında guruplansın</u> seçilmişse, onaylama işlemi sonucunda seçilen irsaliyeler cariler bazında tek bir fatura şeklinde guruplanarak onaylanır.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+	<h3>Fatura modülü</h3>
+	<p>
+		<ul>
+			<li><code>Peşin?</code> Faturaların peşin olup-olmayacağı bu değere göre belirlenir.</li>
+			<li><code>Tevkifat Oranı</code> Faturalarda tevkifat olup-olmayacağı, olacaksa da oranı bu değere göre belirlenir.</li>
+			<li><code>Alanların Görünürlüğü</code> Faturalarda ekstra olarak üç alan daha kullanabilirsiniz; Seri No, ÖTV ve ÖİV. Bu kısımdan bu alanların görünürlüğünü belirleyebilirsiniz.</li>
+		</ul>
+	</p>
+
+	<h3>Cari modülü</h3>
+	<p>
+		<ul>
+			<li><code>Kategori Denetimi?</code> Cari hesapları etkileyen borç-alacak işlemleri esnasında bakiye miktarlarının kategori tanıtımındaki borç-alacak limitleri dışında olmasını engellemek için bu değer kullanılır. Kategori denetimleri ekstra veritabanı sorguları yapacağı için yavaşlamalar yaşanabilir.</li>
+		</ul>
+	</p>
+
+	<h3>Çek/Senet modülü</h3>
+	<p>
+		<ul>
+			<li><code>Kefil Bilgileri?</code> Senet giriş kısmında kefil bilgilerinin de olup-olmayacağı bu değere göre belirlenir.</li>
+		</ul>
+	</p>
+
+	<h3>Kasa modülü</h3>
+	<p>
+		<ul>
+			<li><code>Kasa</code> Para giriş-çıkışlarında kasa alanı için ön tanımlı olarak bu değer kullanılır.</li>
+		</ul>
+	</p>
+
+	<h3>Genel</h3>
+	<p>
+		<ul>
+			<li>
+				<code>Fiş No Yenileme</code> Fiş girişlerinde bulunan Fiş No alanın arttırım şekli bu alan ile belirlenir.
+				<ul>
+					<li><u>Serbest</u> Herhangi bir yenileme olmadan sürekli artan</li>
+					<li><u>Günlük</u> Günlük olarak yeniden başlayan</li>
+					<li><u>Aylık</u> Aylık olarak yeniden başlayan</li>
+				</ul>
+			</li>
+			<li>
+				<code>Belge No Artışı</code> Hareket işlemlerinde bulunan Belge No alanın arttırım şekli bu alan ile belirlenir.
+				<ul>
+					<li><u>Manuel</u> Herhangi bir artış olmaz, manuel olarak istediğiniz değeri kullanabilirsiniz.</li>
+					<li><u>Yarı Otomatik</u> Belge No alanının yanına son belge numarasını bulup arttırabilmeniz için simgesi <span class="glyphicon glyphicon-play-circle"></span> olan bir buton çıkar.</li>
+					<li><u>Tam Otomatik</u> Her yeni bir işlem formu açıldığında bu alana son belge numarası bir arttırılarak getirilir.</li>
+				</ul>
+			</li>
+			<li><code>Liste Satır Sayısı</code> Fiş ve tanım ekranlarında ilk etapta gelen arama ve listeleme formlarının listeleyeceği maksimum satır sayısı bu değer ile belirlenir.</li>
+			<li><code>Sürekli Kayıt</code> Ekleme işleminde her kayıt işleminden sonra formun yeni bir ekleme durumuna gelip-gelmeyeceği bu değer ile belirlenir.</li>
+			<li><code>Kuruş Sayısı</code> Parasal alanlarda bulunacak kuruş hane sayısı bu değer ile belirlenir.</li>
+			<li><code>Dövizli Çalışma?</code> Farklı para birimleri ile çalışılıp-çalışılmayacağı bu değer ile belirlenir.</li>
+			<li><code>Para Birimi</code> Sistemin tamamında birincil para birimi bu değer ile belirlenir. Burda belirlenen para biriminin karşılığı her zaman 1 kabul edilir.</li>
+			<li>
+				<code>Belge Yazdırma</code> Hareket formlarınıza ait belgelerin basım davranışı bu değer ile belirlenir.
+				<ul>
+					<li><u>Yok</u> Belge basımı yapılmayacak</li>
+					<li><u>Manuel</u> Belge basımını el ile tetikleyeceksiniz</li>
+					<li><u>Otomatik</u> Her kayıt işleminden sonra belge basım formu otomatik açılacak</li>
+				</ul>
+			</li>
+			<li>
+				<code>Çıkış Birimi</code> Rapor formlarında bulunan çıkış birimi için bu değer kullanılır.
+				<ul>
+					<li><u>Html</u> Web sayfası formatında basım yapar</li>
+					<li><u>Pdf</u> Taşınabilir döküman formatında basım yapar</li>
+					<li><u>Excel</u> MS Excel formatında basım yapar</li>
+					<li><u>Csv</u> Virgül ayrımlı veri dosyası formatında basım yapar</li>
+					<li><u>Text</u> Düz metin dosyası formatında basım yapar</li>
+					<li><u>DotMatrix</u> Metin tabanlı yazıcıya basım yapar</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
