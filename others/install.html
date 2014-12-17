@@ -1,0 +1,127 @@
+<div class="page-header">
+	<h2>Kurulum işlemleri</h2>
+</div>
+
+<h4>Java JDK Kurulumu</h4>
+<p>
+	seyhan, Java platformu üzerine geliştirilmiştir bu yüzden programı kullanabilmeniz için Java JDK 6 (ya da daha sonraki bir sürümü) kurmanız gerekir!
+</p>
+
+<h4>Sisteminizde kurulu değilse;</h4>
+<p>
+	Kullandığınız işletim sistemi ve mimarisine göre java jdk kurulumu ve JAVA_HOME sistem değişkeni tanıtımı değişiklik gösterir. Bunun için internetten sisteminize uygun kurulumu anlatan yazılara bakmanız önerilir. Aşağıdaki kısımda işletim sistemlerine göre temel jdk kurulumunun nasıl yapılacağı anlatılmıştır.
+	<ul>
+		<li>
+			Windows için;
+			<ol>
+				<li>Java kurulum programını indirmek için <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR">şu adrese</a> girin.</li>
+				<li>Açılan sayfadaki Lisans Anlaşmasını Onaylayın.</li>
+				<li>Kullandığınız Windows 32 bit ise Windows x86 olanı indirin.</li>
+				<li>Kullandığınız Windows 64 bit ise Windows x64 olanı indirin.</li>
+				<li>Kurulumu bitirdikten sonra Java' nın kurulduğu dizine giderek dizin yolunuzu kopyalayın <small>(kurulum dizininiz şuna benzeyecektir --> C:\Program Files (x86)\Java\jdk1.6.0_45)</small>.</li>
+				<li><code>JAVA_HOME</code> sistem değişkenini şu adımlarla tanımlayın;
+					<ol>
+						<li>Bilgisayarınızın "Denetim Masası > Sistem > Gelişmiş Sistem Ayarları" kısmına girin.</li>
+						<li>Açılan pencereden "Ortam Değişkenleri" butonunu klikleyin.</li>
+						<li>Açılan formda iki kısım olacak, bizim işimiz alt kısımdaki "Sistem değişkenleri" ile. Siz buradaki "Yeni" butonunu klikleyin.</li>
+						<li>Nihayet tanımlama kısmına geldik, buradaki "Değişken Adı" yazan bölüme <b>JAVA_HOME</b>, "Değişken değeri" yazan bölüme de <b>kurulum dizinini</b> yazın ve Tamam butonunu klikleyerek pencereyi kapatın.</li>
+						<li>"Sistem değişkenleri" bölümünden içinde <code>Path</code> değeri olan satırı seçip Düzenle butonunu klikleyin.</li>
+						<li>Açılan penceredeki "Değişken değeri" alanının başına <b>%JAVA_HOME%\bin;</b> ekleyin, bitti.</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>
+			Debian, Ubuntu, Mint... için; (komut satırından)
+			<div class="highlight">
+				<pre>
+					<code class="language-bash" data-lang="bash">$ sudo apt-get install openjdk-6-jdk openjdk-6-jre</code>
+				</pre>
+			</div>
+		</li>
+		<li>
+			Fedora, Oracle Linux, Red Hat Enterprise Linux... için; (komut satırından)
+			<div class="highlight">
+				<pre>
+					<code class="language-bash" data-lang="bash">$ su -c "yum install java-1.6.0-openjdk-devel java-1.6.0-openjdk"</code>
+				</pre>
+			</div>
+		</li>
+	</ul>
+</p>
+
+<h4>JDK kurulduktan sonra;</h4>
+<p>
+	Kurulumun doğruluğunu test etmek için komut satırından <code>java -version</code> yazıp enter'a bastığınızda java'nın sürüm bilgilerini görüyorsanız kurulum başarılı demektir.
+</p>
+
+<h3>Ön Hazırlıklar</h3>
+<ol>
+	<li>seyhan ilk olarak H2 veritabanı ile çalışacak şekilde ayarlanmıştır ve H2 db, daha çok demo ve test işlemlerinde kullanım için uygundur. Farklı bir veritabanı kullanmak istiyorsanız ve sisteminizde de yüklü değilse bu aşamada kurmanız gerekiyor.</li>
+	<li>Dağıtımlar zip halinde olduğu için sisteminizde Zip Açıcı (winzip, unzip...) olmalı. Sisteminizde yoksa, kullandığınız işletim sistemine uygun olan bir açıcı indirip kullanabilirsiniz.</li>
+</ol>
+
+
+seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonraki anlatımlarda referans olması için bu dizine APP_DIR diyeceğiz.
+<p>
+	<div class="highlight">
+		<pre><code class="language-bash" data-lang="bash">APP_DIR (1)
+├── conf/ (2)
+│   └── evolutions/ (3)
+│       ├── application.conf
+│       ├── messages.tr
+│       ├── messages.en
+│       └── logger.xml
+├── lib/ (4)
+└── reports/ (5)</code></pre>
+	</div>
+</p>
+<small>
+	<p>(1) seyhan Project'in ana dizinidir. Projeyi başlatmak için içerisinde iki adet script dosyası bulunur. Windows işletim sistemleri için <code>seyhan.bat</code> ve Mac ve Linux sistemleri için <code>seyhan</code> ana script dosyalarıdır. Linux ve Mac kullanıcılarının öncelikle <strong>seyhan</strong> script dosyasını executable hale getirmeleri gerekiyor.</p>
+	<p>
+		<div class="highlight">
+			<pre><code class="language-bash" data-lang="bash">$ chmod +x seyhan</code></pre>
+		</div>
+	</p>
+	
+	<p>(2) Tüm konfigurasyon dosyalarının bulunduğu dizindir. İçerisinde bulunan dosyalar ve temel görevleri:
+		<ul>
+			<li><code>application.conf:</code> projenin temel ayarlar dosyasıdır.</li>
+			<li><code>messages.tr:</code> Türkçe metinlerin bulunduğu dosyadır.</li>
+			<li><code>messages.en:</code> İngilizce metinlerin bulunduğu dosyadır.</li>
+			<li><code>logger.xml:</code> log çıktısı formatlarının ve çıkış yerlerinin ayarlandığı dosyadır.</li>
+		</ul>
+	</p>
+	
+	<p>(3) Proje kullanılacağı ilk sefer için veritabanı şema kurulumu <strong>seyhan</strong> tarafından otomatik olarak yapılır. Bu dizinde her bir veritabanı için ana şemayı oluşturan toplu sql scriptleri yer alır. <strong>seyhan</strong> şema kurulumlarını ve güncellemelerin otomatik olarak yapar. İsterseniz bunu kendiniz de yapabilirsiniz.</p>
+	<p>(4) Projenin temel jar dosyası ile kullandığı tüm kütüphaneler bu dizinde yer alır.</p>
+	<p>(5) Projedeki tüm raporlar bu dizinde açık olarak yer alır.</p>
+</small>
+
+<div class="bs-callout bs-callout-danger">
+	<h4>Çalışmak istediğiniz veritabanı için;</h4>
+	<p>
+		<strong>seyhan</strong> demo ve test işlemleri için ilk kullanımda H2 veritabanı ile gelir. Testlerinizi bitirdikten sonra mysql, postgresql ya da ms-sqlserver veritabanlarından birini kullanmanız önerilir.
+		Daha detaylı bilgili için <a type="button" href="#/database" class="btn btn-default btn-xs active">Veritabanı İşlemleri</a> kısmına bakabilirsiniz.
+	</p>
+</div>
+
+<h3>Kurulum sonrası</h3>
+<p>
+	<strong>seyhan</strong> temel olarak sunucu sistemlerde çalışacak şekilde tasarlanmıştır. Elbette bu durum kişisel bilgisayarlarda çalışmasına engel değildir. Bildiğiniz gibi sunucu sistemlerde grafik tabanlı masaüstü yoktur ve süreçler konsol tabanlı işletilirler.
+	Bu yüzden <strong>seyhan</strong> konsol tabanlı olarak başlatılır ve durdurulur.
+</p>
+<p>
+	Başlatmak için linux ve mac sistemlerinde konsoldan <code>$APP_DIR/seyhan</code>, windows sisteminde komut satırından <code>%APP_DIR%\seyhan.bat</code> script dosyasını çalıştırmalısınız. Daha sonra bilgisayarınızın tarayıcısından <a href="http://localhost:9000">http://localhost:9000</a> yazıp <kbd>enter</kbd> basmalısınız.
+	Eğer uygulamayı sunucuya kurup deneyecekseniz, <code>localhost</code> yerine sunucunun IP adresini yazmalısınız!
+</p>
+<p>
+	Durdurmak için başlattığınız konsoldan <kbd>ctrl + c</kbd> tuş kombinaysonuna basmalısınız.
+</p>
+
+<h3>Login formu ve giriş</h3>
+<p>
+	Programı sadece giriş yapmış kullanıcılar kullanabilir. Henüz giriş yapmamış kullanıcılar ilk etapta Login Formu'na yönlendirilirler.
+</p>
+
+<div ng-include src="'includes/instant-users.html'"></div>

@@ -24,6 +24,7 @@ seyhanDocApp.config(function($routeProvider) {
         .when('/printing/sample05', {templateUrl : 'printing/sample05.html'})
         .when('/printing/sample06', {templateUrl : 'printing/sample06.html'})
 
+        .when('/others/install', {templateUrl : 'others/install.html'})
         .when('/others/profiles', {templateUrl : 'others/profiles.html'})
         .when('/others/database', {templateUrl : 'others/database.html'})
         .when('/others/stock-tabs', {templateUrl : 'others/stock-tabs.html'})
