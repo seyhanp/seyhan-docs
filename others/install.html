@@ -109,15 +109,23 @@ seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonra
 <h3>Kurulum sonrası</h3>
 <p>
 	<strong>seyhan</strong> temel olarak sunucu sistemlerde çalışacak şekilde tasarlanmıştır. Elbette bu durum kişisel bilgisayarlarda çalışmasına engel değildir. Bildiğiniz gibi sunucu sistemlerde grafik tabanlı masaüstü yoktur ve süreçler konsol tabanlı işletilirler.
-	Bu yüzden <strong>seyhan</strong> konsol tabanlı olarak başlatılır ve durdurulur.
+	<strong>seyhan</strong> hem grafik hem de konsol tabanlı olarak başlatılabilir / durdurulabilir.
 </p>
 <p>
-	Başlatmak için linux ve mac sistemlerinde konsoldan <code>$APP_DIR/seyhan</code>, windows sisteminde komut satırından <code>%APP_DIR%\seyhan.bat</code> script dosyasını çalıştırmalısınız. Daha sonra bilgisayarınızın tarayıcısından <a href="http://localhost:9000">http://localhost:9000</a> yazıp <kbd>enter</kbd> basmalısınız.
-	Eğer uygulamayı sunucuya kurup deneyecekseniz, <code>localhost</code> yerine sunucunun IP adresini yazmalısınız!
+	Başlatmak için linux ve mac sistemlerinde <code>$APP_DIR/start.sh</code>, windows sisteminde <code>%APP_DIR%\start.bat</code> script dosyasını çalıştırmalısınız. Daha sonra bilgisayarınızın tarayıcısından <a href="http://localhost:9000">http://localhost:9000</a> yazıp <kbd>enter</kbd> basmalısınız.
+	Eğer uygulamayı sunucuya kurup uzaktan erişecekseniz, <code>localhost</code> yerine sunucunun IP adresini yazmalısınız!
 </p>
 <p>
-	Durdurmak için başlattığınız konsoldan <kbd>ctrl + c</kbd> tuş kombinaysonuna basmalısınız.
+	Durdurmak için linux ve mac sistemlerinde <code>$APP_DIR/stop.sh</code>, windows sisteminde komut satırından <code>%APP_DIR%\stop.bat</code> script dosyasını çalıştırmalısınız. Ayrıca, uygulamayı başlattığınız konsoldan <kbd>ctrl + c</kbd> tuş kombinaysonuyla da durdurabilirsiniz (bu yöntem önerilmez!).
 </p>
+
+
+<div class="bs-callout bs-callout-info">
+	<h4>Farklı port kullanmak isterseniz</h4>
+	<p>
+		seyhan, varsayılan olarak 9000 numaralı portu kullanır. Linux ve mac sistemlerinde <code>$APP_DIR/conf/init.sh</code>, windows sisteminde <code>%APP_DIR%\conf\init.bat</code> script dosyasında bulunan <code>http.port</code> değerini değiştirebilirsiniz.
+	</p>
+</div>
 
 <div class="bs-callout bs-callout-danger">
 	<h4>Hata alırsanız!</h4>
@@ -129,7 +137,6 @@ seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonra
 		</ul>
 	</p>
 </div>
-
 <h3>Login formu ve giriş</h3>
 <p>
 	Programı sadece giriş yapmış kullanıcılar kullanabilir. Henüz giriş yapmamış kullanıcılar ilk etapta Login Formu'na yönlendirilirler.
