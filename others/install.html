@@ -61,7 +61,6 @@
 	<li>Dağıtımlar zip halinde olduğu için sisteminizde Zip Açıcı (winzip, unzip...) olmalı. Sisteminizde yoksa, kullandığınız işletim sistemine uygun olan bir açıcı indirip kullanabilirsiniz.</li>
 </ol>
 
-
 seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonraki anlatımlarda referans olması için bu dizine APP_DIR diyeceğiz.
 <p>
 	<div class="highlight">
@@ -119,6 +118,21 @@ seyhan-x.x.x.zip dosyasını sisteminizde uygun olan bir yere açın. Daha sonra
 	Durdurmak için linux ve mac sistemlerinde <code>$APP_DIR/stop.sh</code>, windows sisteminde komut satırından <code>%APP_DIR%\stop.bat</code> script dosyasını çalıştırmalısınız. Ayrıca, uygulamayı başlattığınız konsoldan <kbd>ctrl + c</kbd> tuş kombinaysonuyla da durdurabilirsiniz (bu yöntem önerilmez!).
 </p>
 
+<div class="bs-callout bs-callout-warning">
+	<h4>Sisteminizde daha eski bir sürüm varsa</h4>
+	<ul>
+		<li>Eskisi ile beraber yeni sürümü de kullanmak istiyorsanız;
+			<div>
+				Port çakışması yaşamamanız için, eski ya da yeni dizinden birisinin port numarasını değiştirmeniz gerekir! Bunun için <code>conf</code> dizini altında bulunan <small>linux ve mac sistemlerinde</small> init.sh, <small>windows sisteminde</small> init.bat script dosyasında bulunan <code>http.port</code> değerini değiştirmelisiniz. Örnek olarak, birinin değerini <b>9000</b> diğerininkini ise <b>9100</b> yapabilirsiniz.
+			</div>
+		</li>
+		<li>Eski sürümü kullanmayacaksanız;
+			<div>
+				Öncelikle eski dizininizin yedeğini alın, eski sürümde <code>conf</code> dizini altında bulunan <code>application.conf</code> dosyasını yeni dizindeki <small>(yine aynı yere) </small><u>conf</u> dizini altına kopyalayın. Eğer H2 veritabanı kullanıyorsanız bu dizini de eskisinden olduğu gibi alıp yeni dizine kopyalayın.
+			</div>
+		</li>
+	</p>
+</div>
 
 <div class="bs-callout bs-callout-info">
 	<h4>Farklı port kullanmak isterseniz</h4>
