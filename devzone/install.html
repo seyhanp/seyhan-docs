@@ -1,0 +1,148 @@
+<div class="page-header">
+	<h2>Kaynak kodlar ile çalışmak</h2>
+	<p class="lead">Bir programcıysanız ve uygulamayı test - debug etmek istiyorsanız ya da tasarımcıysanız ve seyhan' ın temasını değiştirmek istiyorsanız aşağıdaki yönergelere göre seyhan' ın kaynak kodlarını indirebilir, değiştirip istediğiniz kadar test edebilirsiniz.</p>
+</div>
+
+<h3>Ön hazırlıklar</h3>
+<p>
+	Test işlemlerine başlamadan önce sisteminizde bazı düzenlemelerin ve kurulumların hazır olması gerekiyor.
+
+	<h4>İlk adımlar</h4>
+	<p>
+		<ul>
+			<li>Java JDK 6+: Uygulamanın hazırlandığı ana platformdur. Henüz kurmadıysanız şimdi tam zamanıdır. Şurada nasıl yapacağınız detaylıca anlatılıyor : <a href="#/others/install">Java JDK Kurulumu</a></li>
+			<li>Play Framework: Uygulamanın kullandığı geliştirme çatısıdır. Şuradan indirebilirsiniz : <a class="btn btn-xs btn-default" href="http://downloads.typesafe.com/play/2.2.4/play-2.2.4.zip">play-2.2.4.zip</a></li>
+			<li>Git Client: Kaynak kodları kendi bilgisayarınıza indirebilmeniz için seyhan' ı merkezi reposu olan <a href="https://github.com/seyhanp/seyhan" target="_blank">Github</a>' dan çekmeniz gerekiyor.</li>
+			<li>iReport: Raporların hazırlandığı programdır, raporlarınızı bu program aracılığı ile yeniden düzenleyebilirsiniz. Şuradan indirebilirsiniz : <a href="http://community.jaspersoft.com/download" target="_blank">iReport Designer</a></li>
+		</ul>
+	</p>
+
+	<h4>Playframework kurulumu</h4>
+	<p>
+		İndirdiğiniz play-2.2.4.zip dosyasını uygun bir dizine açın (windows için c:\sp\play, linux için ~/sp/play olabilir, bu dizin play dizini olarak kullanılacaktır). JDK Kurulumu esnasında tanımladığımız JAVA_HOME sistem değişkeni gibi play dizini için de PLAY_HOME sistem değişkenini tanımlamalıyız. Tek farkı, <code>Path</code> kısmına PLAY_HOME değerini eklerken %PLAY_HOME%; yazmamız yeterli olacaktır.
+	</p>
+
+	<p>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Lütfen dikkat!</h4>
+			<p>
+				Github üzerinde bir kullanıcı hesabınızın olması gerkiyor, henüz yoksa şimdi oluşturmalısınız! Hesabınız yoksa ücretsiz olarak <a href="https://github.com/join" target="_blank">şu adreste</a> oluşturabilirsiniz.
+			</p>
+		</div>
+	</p>
+
+	<h4>Git Client kurulumu</h4>
+	<p>
+		Daha önce Git Sürüm Kontrol Sistemini kullanmadıysanız şu adresteki <a href="https://git-scm.com/book/tr/v1" target="_blank">Git Rehberi</a> işinize çok yarayacaktır.
+		<ul>
+			<li>Eclipse, Netbeans ... gibi bir IDE kullanıyorsanız, plugin olarak gelen bir client' ı kullanabilirsiniz</li>
+			<li>Windows için harici client olarak; <a href="http://www.syntevo.com/smartgit" target="_blank">SmartGit</a>' i</li>
+			<li>Linux için harici client olarak ise aşağıdaki client' ları kullanabilirsiniz.
+				<p>
+					Debian, Ubuntu, Mint... için; (komut satırından)
+					<div class="highlight">
+						<pre><code class="language-bash" data-lang="bash">$ sudo apt-get install git-core</code></pre>
+					</div>
+					Fedora, Oracle Linux, Red Hat Enterprise Linux... için; (komut satırından)
+					<div class="highlight">
+						<pre><code class="language-bash" data-lang="bash">$ su -c "yum install git-core"</code></pre>
+					</div>
+				</p>
+			</li>
+		</ul>
+	</p>
+
+	<h4>Kaynak kodları kendi bilgisayarınıza çekme</h4>
+	<p>
+		SmartGit kullanacaksanız; 
+		<ul>
+			<li><code>Project -> Clone -> Remote Git / SVN repository</code> menüsünü açın.</li>
+			<li>Açılan formdaki Repository URL kısmına <code>https://github.com/seyhanp/seyhan.git</code> yazıp Continue butonunu klikleyin.</li>
+			<li>Bir sonraki adımda sizden github username ve password bilgilerinizi isteyecektir. Bu bilgileri girip sonraki kısıma geçin.</li>
+			<li>Son adımda uygulamanın bilgisayarınızda nereye indirileceği sorulacaktır, sizin için uygun bir dizin belirleyebilirsiniz (windows için c:\sp\seyhan olabilir)</li>
+		</ul>
+		Konsol kullanarak çekecekseniz, uygun dizine (linux için ~/sp/seyhan olabilir) geçin ve aşağıdaki komutu yazarak enter tuşuna basın, sonrasında sizden username ve password bilgilerinizi isteyecektir.
+		<div class="highlight">
+			<pre><code class="language-bash" data-lang="bash">$ git clone https://github.com/seyhanp/seyhan.git</code></pre>
+		</div>
+	</p>
+
+</p>
+
+<h3>Programı çalıştırma</h3>
+<p>
+	Uygulamanın ana çatısı olan Playframework konsol tabanlı olarak yönetiliyor. Derleme, Çalıştırma, Debug modda çalıştırma ve Durdurma işlemlerinin tamamı konsol aracılığı ile yapılır. Yukarıdaki adımlarda Playframework' ü nasıl indirip sisteme tanıtacağımızı görmüştük, bu kısımda ise, uygulamayı nasıl yöneteceğimizi göreceğiz. Bunun için öncelikle temel Playframework komutlarını görelim;
+
+	<h4>Temel komutlar</h4>
+	<p>
+		<ul>
+			<li>Eclipse uygun proje yapısının oluşturulması için <code>eclipse</code></li>
+			<li>Netbeans' e uygun proje yapısının oluşturulması için <code>netbeans</code></li>
+			<li>IntelliJ' ye uygun proje yapısının oluşturulması için <code>idea</code></li>
+			<li><code>clean</code> : Çok fazla derleme ve test işlemlerinden sonra (ihtiyaç olması durumunda) derlenmiş olan sınıfları temizlemek için kullanılır. Derleme adımlarının tüm sınıflar için yeniden ve tam olması istendiği durumlarda kullanılabilir.</li>
+			<li><code>compile</code> : Playframework otomatik olarak değişen sınıfları algılar ve derleme işlemlerini yapar, fakat bazen bu işlemler tam da istendiği gibi olmaz. Bu durumlarda compile komutu kullanılır. Genellikle clean komutundan sonra kullanılır.</li>
+			<li><code>run</code> : seyhan' ı test modda çalıştırır. Bu komutu verdikten sonra tarayıcınızdan http://localhost:9000 yazarak uygulamaya erişebilirsiniz.</li>
+			<li><code>debug</code> : seyhan' ı debug modda çalıştırır. Bu komutu verdikten sonra da yine run komutunda olduğu gibi tarayıcınızdan uygulamaya erişebilirsiniz.</li>
+		</ul>
+	</p>
+
+	<h4>Komutların kullanımı</h4>
+	<p>
+		Aşağıdaki komutları çalıştırabilmeniz için, komut satırından uygulamanın ana dizinine girin (windows için c:\sp\seyhan, linux için ~/sp/seyhan olabilir)
+		<div>Projeyi kullanmak istediğiniz IDE' de açmak için aşağıdaki komutları çalıştırdıktan sonra IDE' nin Import Existing Proıject seçeneğini kullanabilirsiniz.</div>
+		<ul>
+			<li>Projeyi Eclipse' te açacaksanız <code>play eclipse</code></li>
+			<li>Projeyi Netbeans' de açacaksanız <code>play netbeans</code></li>
+			<li>Projeyi IntelliJ' de açacaksanız <code>play idea</code></li>
+		</ul>
+
+		Uygulamayı yönetmek için aşağıdaki komutları kullanabilirsiniz.
+		<ul>
+			<li>Temizlik için <code>play clean</code></li>
+			<li>Kodları derlemek için <code>play compile</code></li>
+			<li>Test modda çalıştırmak için <code>play run</code></li>
+			<li>Debug modda çalıştırmak için <code>play debug</code></li>
+		</ul>
+		yazıp enter tuşuna basın.
+	</p>
+
+	<h4>Eclipse ile Debug işlemi</h4>
+	<p>
+		Öncelikle uygulamayı Eclipse proje ağacı yapısına uyarlamak için <strong><u>bir kereliğine</u></strong> komut satırından (uygulamanın olduğu dizinde) <code>play eclipse</code> komutu ile yapılandırıp Eclipse' i açıyoruz. Daha sonra Import seçeneği ile uygulamayı Eclipse içerisine aktarıp aşadığaki işlemleri yapıyoruz.
+		<ul>
+			<li>Debug Configurations menüsünden, Run -> Edit Configurations menüsünü seçin</li>
+			<li>Sol kısımdaki Remote Java Application kısmına yeni bir konfigurasyon ekleyin</li>
+			<li>Bir isim verin, ve aşağıdaki alanları karşılık şu değerleri verin;
+				<ul>
+					<li>Connection Type: Socket Attach</li>
+					<li>Host: localhost</li>
+					<li>Port: 9999</li>
+					<li>Apply ve sonrasında Debug butonunu klikleyerek Run/Debug Configurations dialoğunu kapatın.</li>
+				</ul>
+			</li>
+		</ul>
+		bu işlemlerden sonra Eclipse ile debug modda çalışan uygulamamız arasında bağlantı kurulmuş olacak.
+	</p>
+</p>
+
+<h3>Programı durdurma</h3>
+<p>
+	Yine komut satırından <kbd>ctrl+d</kbd> tuş kombinasyonu ile çalışan uygulamayı durdurabilirsiniz.
+</p>
+
+<h3>iRepor ile çalışma</h3>
+<p>
+	iReport programı görsel bir rapor tasarım programıdır. Kullanımı oldukça basittir. seyhan' ın raporları uygulama dizini altındaki reoprts dizini içerisinde bulunur. Düzenlediğiniz raporlar için programı durdur-başlat, temizleme, derleme... yapmanıza gerek yoktur!
+</p>
+
+<p>
+	<div class="bs-callout bs-callout-info">
+		<h4>İşinize yarayabilir</h4>
+		<p>
+			<ul>
+				<li>Uygulamayı bir kere run komutu ile çalıştırdıktan sonra durdurmaksızın istediğiniz kadar değişiklik yapıp, tarayıcınızı refresh yaparak yaptığınız düzenlemeleri görebilirsiniz.</li>
+				<li>Veritanabanı ayarı ilk kurulumla birlikte h2db olarak gelir (isterseniz application.conf dosyasından değiştirebilirsiniz). Bu veritabanı test işlemleriniz için oldukça uygundur. Default kurulum dizini olarak seyhan' ın kaynak kodlarının olduğu dizin içerisinde h2db dizinidir. Veritabanı ile ilgili herhangi bir sorun yaşarsanız; programı durudurun, h2db dizinini silin. Tekrar çalıştırdığınızda sıfırdan veritabanı oluşacaktır.</li>
+			</ul>
+		</p>
+	</div>
+</p>

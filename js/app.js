@@ -33,5 +33,7 @@ seyhanDocApp.config(function($routeProvider) {
         .when('/others/special-fields', {templateUrl : 'others/special-fields.html'})
         .when('/others/informations', {templateUrl : 'others/informations.html'})
 
+        .when('/devzone/install', {templateUrl : 'devzone/install.html'})
+
         .otherwise({ redirectTo: '/' });
 });
