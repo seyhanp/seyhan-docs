@@ -81,14 +81,14 @@
 			<li>IntelliJ' ye uygun proje yapısının oluşturulması için <code>idea</code></li>
 			<li><code>clean</code> : Çok fazla derleme ve test işlemlerinden sonra (ihtiyaç olması durumunda) derlenmiş olan sınıfları temizlemek için kullanılır. Derleme adımlarının tüm sınıflar için yeniden ve tam olması istendiği durumlarda kullanılabilir.</li>
 			<li><code>compile</code> : Playframework otomatik olarak değişen sınıfları algılar ve derleme işlemlerini yapar, fakat bazen bu işlemler tam da istendiği gibi olmaz. Bu durumlarda compile komutu kullanılır. Genellikle clean komutundan sonra kullanılır.</li>
-			<li><code>run</code> : seyhan' ı test modda çalıştırır. Bu komutu verdikten sonra tarayıcınızdan http://localhost:9000 yazarak uygulamaya erişebilirsiniz.</li>
+			<li><code>run</code> : seyhan' ı test modda çalıştırır. Bu komutu verdikten sonra tarayıcınızdan <a href="http://localhost:9000" target="_blank">http://localhost:9000</a> yazarak uygulamaya erişebilirsiniz.</li>
 			<li><code>debug</code> : seyhan' ı debug modda çalıştırır. Bu komutu verdikten sonra da yine run komutunda olduğu gibi tarayıcınızdan uygulamaya erişebilirsiniz.</li>
 		</ul>
 	</p>
 
 	<h4>Komutların kullanımı</h4>
 	<p>
-		Aşağıdaki komutları çalıştırabilmeniz için, komut satırından uygulamanın ana dizinine girin (windows için c:\sp\seyhan, linux için ~/sp/seyhan olabilir)
+		Aşağıdaki komutları çalıştırabilmek için, komut satırından uygulamanın ana dizinine girin (windows için c:\sp\seyhan, linux için ~/sp/seyhan olabilir)
 		<div>Projeyi kullanmak istediğiniz IDE' de açmak için aşağıdaki komutları çalıştırdıktan sonra IDE' nin Import Existing Proıject seçeneğini kullanabilirsiniz.</div>
 		<ul>
 			<li>Projeyi Eclipse' te açacaksanız <code>play eclipse</code></li>
@@ -106,10 +106,47 @@
 		yazıp enter tuşuna basın.
 	</p>
 
-	<h4>Eclipse ile Debug işlemi</h4>
 	<p>
-		Öncelikle uygulamayı Eclipse proje ağacı yapısına uyarlamak için <strong><u>bir kereliğine</u></strong> komut satırından (uygulamanın olduğu dizinde) <code>play eclipse</code> komutu ile yapılandırıp Eclipse' i açıyoruz. Daha sonra Import seçeneği ile uygulamayı Eclipse içerisine aktarıp aşadığaki işlemleri yapıyoruz.
+		<div class="bs-callout bs-callout-info">
+			<h4>Bilgilendirme</h4>
+			<p>
+				seyhan projesinin play framework üzerinde geliştirildiği daha önceki bölümlerde anlatılmıştı. play framework de konsol tabanlı bir yönetim aracı olduğu için tüm yönetim işlemlerini konsol tabanlı yapmamız gerekiyor. Eclipse gibi IDE' ler ise proje geliştirilirken sadece <strong>düzenleyici</strong> bir araç olarak kullanılır. Bu tür IDE'ler ile debug modda çalışabilmeniz için uzak bağlantı seçeneğini kullanmanız gerekir. Eclipse için Uzak Bağlantı yapılandırmasını aşağıda bulabilirsiniz.
+			</p>
+		</div>
+	</p>
+
+	<h4>seyhan' ı çalıştırma</h4>
+	<p>
 		<ul>
+			<li>Konsoldan seyhan' ın olduğu dizine girin</li>
+			<li>Normal modda çalıştırmak istiyorsanız : <code>play run</code> komutu ile,</li>
+			<li>Debug modda çalıştırmak istiyorsanız da : <code>play debug run</code> komutu ile uygulamayı çalıştırın</li>
+			<li>Aşağıdaki gibi satırları gördüğünüzde uygulama çalışmış demektir. Web tarayıcınızdan <a href="http://localhost:9000" target="_blank">http://localhost:9000</a> adresi ile uygulamanıza erişebilirsiniz.</li>
+			<li>Programı durdurmak için de yine çalıştırdığınız konsoldayken <kbd>ctrl+d</kbd> tuş kombinasyonunu kullanabilirsiniz.</li>
+		</ul>
+		<div class="highlight">
+			<pre><code class="language-bash" data-lang="bash">/home/mdpinar/projects/seyhan$>play run
+[info] Loading project definition from /home/mdpinar/projects/seyhan/project
+[info] Set current project to seyhan (in build file://home/mdpinar/projects/play/seyhan/)
+
+--- (Running the application from SBT, auto-reloading is enabled) ---
+
+[info] play - Listening for HTTP on /0.0.0.0:9000
+
+(Server started, use Ctrl+D to stop and go back to the console...)</code></pre>
+		</div>
+
+	</p>
+
+	<h4>Eclipse' i kullanma</h4>
+	<p>
+		Kodlarla çalışmaya başlamadan öncelikle bir kereliğine konsoldan <code>play eclipse</code> komutu ile projeyi Eclipse proje ağacı yapısına göre yapılandırın. Daha sonra Eclipse' i açıp Import seçeneği ile uygulamayı aktarın.
+	</p>
+
+	<h4>Debug modda Eclipse' i kullanma</h4>
+	<p>
+		<ul>
+			<li>Bir üst kısımda anlatılan işlemleri yaptıktan sonra sırasıyla aşağıdaki işlemleri yapın</li>
 			<li>Debug Configurations menüsünden, Run -> Edit Configurations menüsünü seçin</li>
 			<li>Sol kısımdaki Remote Java Application kısmına yeni bir konfigurasyon ekleyin</li>
 			<li>Bir isim verin, ve aşağıdaki alanları karşılık şu değerleri verin;
@@ -123,11 +160,6 @@
 		</ul>
 		bu işlemlerden sonra Eclipse ile debug modda çalışan uygulamamız arasında bağlantı kurulmuş olacak.
 	</p>
-</p>
-
-<h3>Programı durdurma</h3>
-<p>
-	Yine komut satırından <kbd>ctrl+d</kbd> tuş kombinasyonu ile çalışan uygulamayı durdurabilirsiniz.
 </p>
 
 <h3>iRepor ile çalışma</h3>
