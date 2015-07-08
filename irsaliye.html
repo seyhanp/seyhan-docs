@@ -20,16 +20,55 @@
 		İrsaliye hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. İrsaliye Kaynakları'nın hangi tür irsaliyelerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
 	</p>
 
+	<h4>İrsaliye Durumları</h4>
+	<p>
+		İrsaliye Alma/Verme süreçlerinize ait farklı evre / durumların tanıtıldığı kısımdır. İrsaliye belgelerinizi Alındı, Üretim, Paketleme, Sevkiyat... gibi bir sıralama ile takip etmek istiyorsanız bu adımları bu kısımda tanıtmalısınız. Bir birini izleyen durumları tanımlayabilmek için;
+		<ul>
+			<li>Öncelikle ilk durumu tanıtın</li>
+			<li>Sırasıyla diğer adımları tanıtın, bunu yaparken <b>Bir Önceki Durum</b>' u belirtirsiniz</li>
+			<li>Bir önceki durumu belirterek durumlar arası hiyerarşiyi tanımlamış olursunuz</li>
+			<li>Sıralamasını değiştirmek istediğiniz bir adım olursa, Sıralama alını değerini arttırabilirsiniz. Tüm durumlarınız için serbest bir şekilde Sıralama değerleri verebilirsiniz.</li>
+		</ul>
+		<p>
+			Örnek tanımlama tablosu;
+			<table class="table table-bordered table-striped">
+				<thead>
+					<th>Durum</th>
+					<th>Bir Önceki Durum</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Alındı</td>
+						<td>--</td>
+					</tr>
+					<tr>
+						<td>Üretim</td>
+						<td>Alındı</td>
+					</tr>
+					<tr>
+						<td>Paketleme</td>
+						<td>Üretim</td>
+					</tr>
+					<tr>
+						<td>Sevkiyat</td>
+						<td>Paketleme</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>Bu tablo yapısına göre oluşacak adımlar; <span class="bordered">Alındı</span><span class="fa fa-arrow-right"></span><span class="bordered">Üretim</span><span class="fa fa-arrow-right"></span><span class="bordered">Paketleme</span><span class="fa fa-arrow-right"></span><span class="bordered">Sevkiyat</span> şeklinde olacaktır</div>
+		</p>
+	</p>
+
 	<h4>İrsaliye Onaylama Adımları</h4>
 	<p>
-		Her girilen irsaliye <span class="bordered">Beklemede</span> statüsünde kaydedilir. Girdiğiniz alış-satış irsaliyelerini Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
+		İrsaliyelerinizin durumlarını değiştirmek ya da Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
 	</p>
 
 	<p>
 		<div>
 			<strong>1. Arama-Bulma adımı</strong>
 		</div>
-		Onaylamak istediğiniz irsaliyeleri öncelikle bu kısımdan (cari hesabına, teslim tarihine, statüsüne, fiş tipine... göre) bulmalısınız.
+		Onaylamak istediğiniz irsaliyeleri öncelikle bu kısımdan (cari hesabına, teslim tarihine, durumuna, fiş tipine... göre) bulmalısınız.
 
 		<div class="vspace-15">
 			<strong>2. Onaylama adımı</strong>
@@ -39,14 +78,19 @@
 			Onaylama Butonu
 			<ul>
 				<li><u>Fatura Oluşur</u> : Seçtiğiniz irsaliyeye ait faturaları oluşturur.</li>
+				<li><u>Durum Değiştir</u> :  Seçtiğiniz irsaliyeleri farklı bir duruma geçirir.</li>
 			</ul>
 		</div>
-	</p>
-	<p>
-		<div class="bs-callout bs-callout-info">
-			Onaylanan irsaliyeler tekar düzenlenemez ve silinemez! Bunu yapabilmek için öncelikle onay faturasını silmeniz gerekir.
+		<div class="vspace-15">
+			<strong>Onaylanan fişlerin geri alınması</strong>
 		</div>
+		Kapatılmış irsaliyeler düzenlenemezler! Bu yüzden Fatura haline dönüştürülen irsaliyeler, oluşturulan Faturanın silinmesi ile eski haline gelirler.
+		<div class="vspace-15">
+			<strong>Durumu değişen fişlerin geri alınması</strong>
+		</div>
+		Yine İrsaliye Onaylama Adımları kısmında arama yaparak irsaliyenizi bulun, ilgili irsaliye satırının en sağında Geri Al butonu çıkacaktır. Bu butonu kullanarak irsaliyenizi bir önceki duruma getirebilirsiniz.
 	</p>
+
 	<p>
 		<div class="bs-callout bs-callout-danger">
 			<h4>Oluşum Tipi</h4>

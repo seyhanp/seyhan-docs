@@ -20,16 +20,55 @@
 		Sipariş hareketlerinizi işlem türüne göre guruplamak isterseniz bu kısmı kullanabilirsiniz. Fiş Kaynakları'nın hangi tür fişlerde kullanılabileceğini belirleyerek de daha fazla kontrol sağlayabilirsiniz.
 	</p>
 
+	<h4>Sipariş Durumları</h4>
+	<p>
+		Sipariş Alma/Verme süreçlerinize ait farklı evre / durumların tanıtıldığı kısımdır. Sipariş belgelerinizi Alındı, Üretim, Paketleme, Sevkiyat... gibi bir sıralama ile takip etmek istiyorsanız bu adımları bu kısımda tanıtmalısınız. Bir birini izleyen durumları tanımlayabilmek için;
+		<ul>
+			<li>Öncelikle ilk durumu tanıtın</li>
+			<li>Sırasıyla diğer adımları tanıtın, bunu yaparken <b>Bir Önceki Durum</b>' u belirtirsiniz</li>
+			<li>Bir önceki durumu belirterek durumlar arası hiyerarşiyi tanımlamış olursunuz</li>
+			<li>Sıralamasını değiştirmek istediğiniz bir adım olursa, Sıralama alını değerini arttırabilirsiniz. Tüm durumlarınız için serbest bir şekilde Sıralama değerleri verebilirsiniz.</li>
+		</ul>
+		<p>
+			Örnek tanımlama tablosu;
+			<table class="table table-bordered table-striped">
+				<thead>
+					<th>Durum</th>
+					<th>Bir Önceki Durum</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Alındı</td>
+						<td>--</td>
+					</tr>
+					<tr>
+						<td>Üretim</td>
+						<td>Alındı</td>
+					</tr>
+					<tr>
+						<td>Paketleme</td>
+						<td>Üretim</td>
+					</tr>
+					<tr>
+						<td>Sevkiyat</td>
+						<td>Paketleme</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>Bu tablo yapısına göre oluşacak adımlar; <span class="bordered">Alındı</span><span class="fa fa-arrow-right"></span><span class="bordered">Üretim</span><span class="fa fa-arrow-right"></span><span class="bordered">Paketleme</span><span class="fa fa-arrow-right"></span><span class="bordered">Sevkiyat</span> şeklinde olacaktır</div>
+		</p>
+	</p>
+
 	<h4>Sipariş Onaylama Adımları</h4>
 	<p>
-		Her girilen sipariş fişi <span class="bordered">Beklemede</span> statüsünde kaydedilir. Girdiğiniz alım-satım sipariş fişlerini İrsaliye veya Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
+		Siparişlerinizin durumlarını değiştirmek ya da İrsaliye veya Faturaya dönüştürmek için bu kısmı kullanırsınız. Onaylama işlemi 2 adımdan oluşmaktadır; arama-bulma ve onaylama.
 	</p>
 
 	<p>
 		<div>
 			<strong>1. Arama-Bulma adımı</strong>
 		</div>
-		Onaylamak istediğiniz sipariş fişlerini öncelikle bu kısımdan (cari hesabına, teslim tarihine, statüsüne, fiş tipine... göre) bulmalısınız.
+		Onaylamak istediğiniz sipariş fişlerini öncelikle bu kısımdan (cari hesabına, teslim tarihine, durumuna, fiş tipine... göre) bulmalısınız.
 
 		<div class="vspace-15">
 			<strong>2. Onaylama adımı</strong>
@@ -40,16 +79,28 @@
 			<ul>
 				<li><u>İrsaliye Oluşur</u> : Seçtiğiniz siparişlere ait irsaliyeleri oluşturur.</li>
 				<li><u>Fatura Oluşur</u> : Seçtiğiniz siparişlere ait faturaları oluşturur.</li>
-				<li><u>Vazgeçildi</u> :  Seçtiğiniz siparişleri iptal statüsüne geçirir.</li>
+				<li><u>Durum Değiştir</u> :  Seçtiğiniz siparişleri farklı bir duruma geçirir.</li>
 			</ul>
 		</div>
+		<div class="vspace-15">
+			<strong>Onaylanan fişlerin geri alınması</strong>
+		</div>
+		Onaylanmış ya da kapatılmış siparişler düzenlenemezler! Bu yüzden İrsaliye ya da Fatura haline dönüştürülen siparişler, oluşturulan İrsaliye / Faturanın silinmesi ile eski haline gelirler.
+		<div class="vspace-15">
+			<strong>Durumu değişen fişlerin geri alınması</strong>
+		</div>
+		Yine Sipariş Onaylama Adımları kısmında arama yaparak siparişinizi bulun, ilgili sipariş satırının en sağında Geri Al butonu çıkacaktır. Bu butonu kullanarak siparişinizi bir önceki duruma getirebilirsiniz.
+
 	</p>
 	<p>
 		<div class="bs-callout bs-callout-info">
-			<div class="indent-20">- Sipariş fişleri (irsaliye ya da fatura şeklinde) onaylanmadıkça stoklara yansıma olmaz.</div>
-			<div class="indent-20">- Onaylanan sipariş fişleri tekar düzenlenemez ve silinemez! Bunu yapabilmek için öncelikle onay irsaliyesi/faturasını silmeniz gerekir.</div>
+			<h4>Bilgilendirme</h4>
+			<p>
+				Sipariş fişleri (irsaliye ya da fatura şeklinde) onaylanmadıkça stoklara yansıma olmaz!
+			</p>
 		</div>
 	</p>
+
 	<p>
 		<div class="bs-callout bs-callout-danger">
 			<h4>Oluşum Tipi</h4>
