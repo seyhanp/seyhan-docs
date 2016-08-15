@@ -1,4 +1,4 @@
-seyhan-docs
+The seyhan-docs
 ===========
 
-seyhan projesi dökümantasyon projesi
+The documentation project for seyhan
